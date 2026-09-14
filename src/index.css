@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF7F2;
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --font-serif: 'Fraunces', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    overflow-x: hidden;
+    /* Smart scroll offset — compensate for fixed header (announcement bar ~32px + navbar ~72px) */
+    scroll-padding-top: 110px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    min-width: 320px;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-serif-brand {
+    font-family: var(--font-serif);
+  }
+}
+
+/* ── Keyframe animations ─────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Accessibility: reduced motion ───────────────────────────────────── */
+/* Disables CSS transitions/animations for users who prefer reduced motion.
+   Framer Motion components handle this separately via useReducedMotion(). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Print styles ────────────────────────────────────────────────────── */
+@media print {
+  /* Hide chrome, navigation, and interactive controls */
+  header, footer, nav,
+  button:not(#invoice-print-action-btn),
+  .toast, .mobile-tab-bar, .cart-drawer {
+    display: none !important;
+  }
+
+  /* Reset parent wrappers so they don't clip the printable content */
+  html, body, #root {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+    background: white !important;
+  }
+
+  /* Printable invoice — force full visibility */
+  #printable-invoice {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  #printable-invoice * {
+    visibility: visible !important;
+  }
+}

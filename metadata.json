@@ -1,0 +1,6 @@
+{
+  "name": "GoodZeed",
+  "description": "Natural, pure everyday food D2C storefront and admin platform for Bangladesh with guest checkout, bKash/Nagad/COD, order tracking, invoice generation, and CMS management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

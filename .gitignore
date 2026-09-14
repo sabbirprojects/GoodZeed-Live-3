@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+
+# Environment variables
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+
+# Runtime data (root-anchored so src/data/ stays tracked)
+/data/
+

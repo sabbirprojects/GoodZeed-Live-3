@@ -1,0 +1,2164 @@
+{
+  "settings": {
+    "storeName": "GoodZeed",
+    "storeTagline": "100% Pure, Natural Everyday Food for Bangladesh",
+    "storeContactPhone": "+880 1711-223344",
+    "storeContactEmail": "care@goodzeed.com.bd",
+    "storeAddress": "House 42, Road 11, Banani, Dhaka-1213, Bangladesh",
+    "bkashReceivingNumber": "01572945718 (Personal)",
+    "bkashInstructions": "1. Go to your bKash Mobile App or dial *247#\n2. Select \"Send Money\"  to: 01572945718\n3. Enter your Order Total amount\n4. Copy the Transaction ID (e.g. 9J8B7G6F) and paste it below.",
+    "nagadReceivingNumber": "01572945718 (Personal)",
+    "nagadInstructions": "1. Go to your Nagad App or dial *167#\n2. Select \"Send Money\" to: 01572945718\n3. Enter your Order Total amount\n4. Copy the Transaction ID (e.g. 7K6L5M4N) and enter it below.",
+    "defaultSeoTitle": "GoodZeed — 100% Pure Natural Food Store Bangladesh",
+    "defaultSeoDescription": "Buy pure Sundarban raw honey, organic chia seeds, cold-pressed mustard oil, and premium dry fruits online in Bangladesh. Fast home delivery.",
+    "currencySymbol": "৳",
+    "faviconPath": "/favicon-16x16.png?v=5",
+    "whatsappSupportNumber": "01410639827"
+  },
+  "adminUser": null,
+  "categories": [
+    {
+      "id": "cat-honey",
+      "name": "Pure Honey (প্রাকৃতিক মধু)",
+      "slug": "pure-honey",
+      "description": "Raw, unpasteurized forest and floral honey harvested sustainably from Sundarban and organic farms.",
+      "image": "/uploads/1789093665629-ms0d06-Gemini_Generated_Image_lli9nylli9nylli9.jpeg",
+      "sortOrder": 1,
+      "isEnabled": true
+    },
+    {
+      "id": "cat-nuts-seeds",
+      "name": "Nuts & Super Seeds (বাদাম ও বীজ)",
+      "slug": "nuts-and-seeds",
+      "description": "Freshly sorted premium almonds, cashews, walnuts, and organic super seeds packed with nutrients.",
+      "image": "/uploads/1789179986363-cw5k12-Medjool_Premium.jpg",
+      "sortOrder": 2,
+      "isEnabled": true
+    },
+    {
+      "id": "cat-oils",
+      "name": "Cold-Pressed Oils (ঘানি ভাঙা তেল)",
+      "slug": "cold-pressed-oils",
+      "description": "100% wood-pressed (Khalo ghani) extra virgin mustard and coconut oils with authentic aroma and zero additives.",
+      "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
+      "sortOrder": 3,
+      "isEnabled": true
+    },
+    {
+      "id": "cat-dry-fruits",
+      "name": "Dry Fruits (ড্রাই ফ্রুটস)",
+      "slug": "dry-fruits",
+      "description": "Naturally sweet Medjool dates, Turkish figs, and sun-dried raisins with no sulfur or added sugar.",
+      "image": "/uploads/1789180618403-865556-Top_5_Dry_Fruits_to_Supercharge_Fitness___Naturally_Boost_Testosterone.jpg",
+      "sortOrder": 4,
+      "isEnabled": true
+    },
+    {
+      "id": "cat-spices",
+      "name": "Pure Spices & Herbs (খাঁটি মশলা)",
+      "slug": "pure-spices",
+      "description": "Single-origin turmeric, organic black seed, and whole spices directly from verified growers.",
+      "image": "/uploads/1789181196477-tmngal-Gemini_Generated_Image_wwapsowwapsowwap.jpg",
+      "sortOrder": 5,
+      "isEnabled": true
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-sundarban-honey",
+      "name": "Raw Sundarban Khalsi Honey (সুন্দরবনের খলসী মধু)",
+      "slug": "sundarban-raw-khalsi-honey",
+      "categoryId": "cat-honey",
+      "shortDescription": "100% wild and raw multifloral honey collected by traditional Mouals deep inside Sundarban mangrove forest.",
+      "fullDescription": "GoodZeed Wild Sundarban Honey is completely natural, raw, and unpasteurized. It retains all natural live enzymes, pollen, propolis, and essential antioxidants. No added sugar, syrup, artificial heat processing, or micro-filtering. Golden-amber in hue with a floral, slightly smoky bouquet distinct to deep mangrove blossom flora.",
+      "ingredients": "100% Pure Wild Mangrove Forest Honey (Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g, Protein 0.3g, Enzymes & Minerals (Zinc, Iron, Potassium).",
+      "originInfo": "Sundarban Forest Biosphere Reserve, Satkhira & Bagerhat, Bangladesh.",
+      "purityInfo": "Tested negative for C4 C3 sugar syrup adulteration. Lab tested for pollen concentration and moisture <19%.",
+      "storageInstructions": "Store at room temperature in a dry place. Do not refrigerate. Crystallization is natural proof of pure raw honey.",
+      "usageInstructions": "Enjoy 1-2 teaspoons daily directly, with warm lemon water in the morning, or drizzled over nuts and oats.",
+      "images": [
+        "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "media": [
+        {
+          "id": "med-sun-3",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
+          "altText": "Pure Wild Honeycomb"
+        }
+      ],
+      "isFeatured": true,
+      "isBestSeller": true,
+      "isNew": false,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.9,
+      "reviewCount": 48,
+      "variants": [
+        {
+          "id": "var-sun-250",
+          "productId": "prod-sundarban-honey",
+          "sku": "GZ-HNY-SUN-250G",
+          "label": "250g Glass Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 520,
+          "salePrice": 470,
+          "stock": 34,
+          "lowStockThreshold": 10,
+          "isEnabled": true
+        },
+        {
+          "id": "var-sun-500",
+          "productId": "prod-sundarban-honey",
+          "sku": "GZ-HNY-SUN-500G",
+          "label": "500g Glass Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 980,
+          "salePrice": 890,
+          "stock": 24,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        },
+        {
+          "id": "var-sun-1000",
+          "productId": "prod-sundarban-honey",
+          "sku": "GZ-HNY-SUN-1KG",
+          "label": "1kg Family Pack",
+          "sizeValue": 1,
+          "sizeUnit": "kg",
+          "price": 1850,
+          "salePrice": 1690,
+          "stock": 12,
+          "lowStockThreshold": 4,
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "id": "prod-organic-chia-seeds",
+      "name": "Certified Organic Chia Seeds (অর্গানিক চিয়া সিড)",
+      "slug": "certified-organic-chia-seeds",
+      "categoryId": "cat-nuts-seeds",
+      "shortDescription": "Grade-A black chia seeds rich in plant-based Omega-3, dietary fiber, protein, and calcium.",
+      "fullDescription": "GoodZeed chia seeds are harvested from pesticide-free, natural crops. When soaked, they form a nutritious hydrophilic gel that helps sustain steady hydration, digestion, and long-lasting fullness. Cleaned with multi-stage air destoners to ensure 99.9% clean, weed-free seeds.",
+      "ingredients": "100% Organic Whole Black Chia Seeds (Salvia hispanica)",
+      "nutritionInfo": "Per 100g: Fiber 34.4g, Protein 16.5g, Omega-3 ALA 17.8g, Calcium 631mg, Iron 7.7mg.",
+      "originInfo": "Directly sourced from trusted high-altitude grower cooperatives.",
+      "purityInfo": "Triple optical machine cleaned. 0% sand, stones or insect presence. Chemical free.",
+      "storageInstructions": "Keep in an airtight jar in a cool, dry area away from direct sunlight.",
+      "usageInstructions": "Soak 1 tablespoon in 250ml water for 15-20 minutes. Add to smoothies, yogurt, lemon water, or pudding.",
+      "images": [
+        "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
+      ],
+      "isFeatured": true,
+      "isBestSeller": true,
+      "isNew": false,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.8,
+      "reviewCount": 36,
+      "variants": [
+        {
+          "id": "var-chia-250",
+          "productId": "prod-organic-chia-seeds",
+          "sku": "GZ-CHIA-250G",
+          "label": "250g Zip Pouch",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 320,
+          "salePrice": 280,
+          "stock": 49,
+          "lowStockThreshold": 15,
+          "isEnabled": true
+        },
+        {
+          "id": "var-chia-500",
+          "productId": "prod-organic-chia-seeds",
+          "sku": "GZ-CHIA-500G",
+          "label": "500g Value Pack",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 600,
+          "salePrice": 520,
+          "stock": 40,
+          "lowStockThreshold": 10,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789189212476-iie9s",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg",
+          "altText": "Sunfood Superfoods Chia Seeds - Raw, Organic, Whole - Keto Super-Seed - Great for Weight-Loss"
+        }
+      ]
+    },
+    {
+      "id": "prod-mustard-oil",
+      "name": "Cold-Pressed Extra Virgin Mustard Oil (ঘানি ভাঙা সরিষার তেল)",
+      "slug": "cold-pressed-mustard-oil",
+      "categoryId": "cat-oils",
+      "shortDescription": "Traditional wooden kolhu (কাঠের ঘানি) cold-pressed indigenous desi Maghi mustard oil with authentic pungent aroma.",
+      "fullDescription": "Extracted slowly at low ambient temperatures without any chemical solvents, heat treatment, or artificial colorants. Cold-pressing retains natural allyl isothiocyanates, essential monounsaturated fatty acids, and Vitamin E. Imparts the authentic Bangladeshi culinary taste and pungency to bhortas, curries, and pickles.",
+      "ingredients": "100% Pure First-Press Desi Maghi Mustard Seeds (Brassica juncea)",
+      "nutritionInfo": "Per 100ml: Monounsaturated Fats 60g, Polyunsaturated Fats 21g, Zero Trans Fat, Zero Added Preservatives.",
+      "originInfo": "Local indigenous mustard farmers of Manikganj & Sirajganj, Bangladesh.",
+      "purityInfo": "Cold-pressed at under 45°C. Lab tested zero erucic adulteration, zero mineral oil.",
+      "storageInstructions": "Store in a cool, dark cabinet away from stoves and direct sunlight.",
+      "usageInstructions": "Essential for traditional Bangladeshi bhortas, mustard hilsa (shorshe ilish), pickles, and body massage.",
+      "images": [
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true,
+      "isBestSeller": true,
+      "isNew": false,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 5,
+      "reviewCount": 52,
+      "variants": [
+        {
+          "id": "var-mustard-500",
+          "productId": "prod-mustard-oil",
+          "sku": "GZ-OIL-MST-500ML",
+          "label": "500ml Bottle",
+          "sizeValue": 500,
+          "sizeUnit": "ml",
+          "price": 240,
+          "salePrice": null,
+          "stock": 28,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        },
+        {
+          "id": "var-mustard-1000",
+          "productId": "prod-mustard-oil",
+          "sku": "GZ-OIL-MST-1L",
+          "label": "1 Liter Bottle",
+          "sizeValue": 1,
+          "sizeUnit": "l",
+          "price": 460,
+          "salePrice": 420,
+          "stock": 22,
+          "lowStockThreshold": 6,
+          "isEnabled": true
+        },
+        {
+          "id": "var-mustard-5000",
+          "productId": "prod-mustard-oil",
+          "sku": "GZ-OIL-MST-5L",
+          "label": "5 Liter Canister",
+          "sizeValue": 5,
+          "sizeUnit": "l",
+          "price": 2250,
+          "salePrice": 1990,
+          "stock": 6,
+          "lowStockThreshold": 2,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "media-0-1789189393522",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-california-almonds",
+      "name": "Premium California Almonds (কাঁচা কাঠবাদাম)",
+      "slug": "premium-california-almonds",
+      "categoryId": "cat-nuts-seeds",
+      "shortDescription": "Jumbo-sized, fresh California almonds with natural crunch, sweet nutty flavor, and wholesome nutrients.",
+      "fullDescription": "GoodZeed selects only top-grade nonpareil almonds. Rich in Vitamin E, magnesium, healthy monounsaturated fats, and protein. Perfect for healthy daily snacking, soaking overnight, or homemade almond milk.",
+      "ingredients": "100% Whole California Raw Almonds (Prunus dulcis)",
+      "nutritionInfo": "Per 100g: Protein 21.2g, Healthy Fats 49.9g, Fiber 12.5g, Vitamin E 25.6mg (171% DV).",
+      "originInfo": "California, USA (nitrogen packed upon arrival).",
+      "purityInfo": "Grade A Jumbo kernel size. No salt, no oil roasting, no chemical preservatives.",
+      "storageInstructions": "Store in airtight containers or refrigerate for maximum crunchiness and freshness.",
+      "usageInstructions": "Soak 6-8 almonds overnight in water, peel in the morning and eat on an empty stomach.",
+      "images": [
+        "/src/assets/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
+        "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": false,
+      "isBestSeller": true,
+      "isNew": false,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.7,
+      "reviewCount": 29,
+      "variants": [
+        {
+          "id": "var-almond-250",
+          "productId": "prod-california-almonds",
+          "sku": "GZ-NUT-ALM-250G",
+          "label": "250g Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 430,
+          "salePrice": 390,
+          "stock": 45,
+          "lowStockThreshold": 10,
+          "isEnabled": true
+        },
+        {
+          "id": "var-almond-500",
+          "productId": "prod-california-almonds",
+          "sku": "GZ-NUT-ALM-500G",
+          "label": "500g Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 820,
+          "salePrice": 750,
+          "stock": 30,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        },
+        {
+          "id": "var-almond-1000",
+          "productId": "prod-california-almonds",
+          "sku": "GZ-NUT-ALM-1KG",
+          "label": "1kg Mega Pack",
+          "sizeValue": 1,
+          "sizeUnit": "kg",
+          "price": 1600,
+          "salePrice": 1450,
+          "stock": 15,
+          "lowStockThreshold": 4,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789189321029-bbrig",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
+          "altText": "244320348532319371"
+        },
+        {
+          "id": "media-0-1789189279939",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-medjool-dates",
+      "name": "Premium Medjool Dates (প্রিমিয়াম মেডজুল খেজুর)",
+      "slug": "premium-medjool-dates",
+      "categoryId": "cat-dry-fruits",
+      "shortDescription": "Large, soft, caramel-sweet Medjool dates harvested naturally without chemical gloss or glucose syrup.",
+      "fullDescription": "Often called the \"King of Dates,\" our Medjool dates are prized for their succulent, melt-in-the-mouth texture and rich natural caramel notes. Plump, thick-fleshed, and full of potassium, fiber, and iron. Excellent quick natural energy booster.",
+      "ingredients": "100% Natural Medjool Dates (Phoenix dactylifera)",
+      "nutritionInfo": "Per 100g: Energy 277 kcal, Dietary Fiber 7g, Potassium 696mg, Naturally sweet.",
+      "originInfo": "Directly sourced from Jordan Valley certified date orchards.",
+      "purityInfo": "Uncoated, no artificial syrup, no preservatives. 100% natural fruit.",
+      "storageInstructions": "Keep in an airtight box. Best preserved chilled or refrigerated.",
+      "usageInstructions": "Enjoy 2-3 dates daily with black seed honey, milk, or stuffed with walnuts.",
+      "images": [
+        "/src/assets/uploads/1789189340197-s4057p-dates.jpg",
+        "/src/assets/uploads/1789189350995-4l61lo-Medjool_Premium.jpg"
+      ],
+      "isFeatured": true,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.9,
+      "reviewCount": 19,
+      "variants": [
+        {
+          "id": "var-date-500",
+          "productId": "prod-medjool-dates",
+          "sku": "GZ-DF-MED-500G",
+          "label": "500g Gift Box",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 950,
+          "salePrice": 850,
+          "stock": 18,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        },
+        {
+          "id": "var-date-1000",
+          "productId": "prod-medjool-dates",
+          "sku": "GZ-DF-MED-1KG",
+          "label": "1kg Premium Box",
+          "sizeValue": 1,
+          "sizeUnit": "kg",
+          "price": 1850,
+          "salePrice": 1650,
+          "stock": 8,
+          "lowStockThreshold": 3,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789189340200-qrwxr",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189340197-s4057p-dates.jpg",
+          "altText": "dates"
+        },
+        {
+          "id": "pm-1789189350999-tnvxo",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189350995-4l61lo-Medjool_Premium.jpg",
+          "altText": "Medjool Premium"
+        }
+      ]
+    },
+    {
+      "id": "prod-black-seed-oil",
+      "name": "Extra Virgin Cold-Pressed Black Seed Oil (কালিজিরা তেল)",
+      "slug": "cold-pressed-black-seed-oil",
+      "categoryId": "cat-oils",
+      "shortDescription": "100% pure cold-pressed Nigella Sativa oil high in natural Thymoquinone (TQ) for immune wellness.",
+      "fullDescription": "Pure black cumin oil pressed freshly without heating. Revered traditionally across the subcontinent for comprehensive immune support and vitality. Tested for high active thymoquinone content.",
+      "ingredients": "100% Pure Nigella Sativa (Black Cumin) Seed Oil",
+      "nutritionInfo": "High in Thymoquinone (TQ > 1.2%), Essential Omega 6 & 9 Fatty Acids.",
+      "originInfo": "Indigenous high-potency black cumin seeds from Natore, Bangladesh.",
+      "purityInfo": "Single cold-pressed, zero chemical additives or solvent extraction.",
+      "storageInstructions": "Store in amber glass bottle in a cool place away from light.",
+      "usageInstructions": "Take half a teaspoon daily mixed with a spoon of raw honey, or use topically.",
+      "images": [
+        "/src/assets/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
+        "/src/assets/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
+      ],
+      "isFeatured": true,
+      "isBestSeller": true,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 5,
+      "reviewCount": 14,
+      "variants": [
+        {
+          "id": "var-bso-100",
+          "productId": "prod-black-seed-oil",
+          "sku": "GZ-OIL-BSO-100ML",
+          "label": "100ml Glass Dropper",
+          "sizeValue": 100,
+          "sizeUnit": "ml",
+          "price": 360,
+          "salePrice": 320,
+          "stock": 13,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789189369334-wd6j4",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
+          "altText": "Black Seed Oil Glow Hacks 2026 For Skin"
+        },
+        {
+          "id": "pm-1789189373037-oe3po",
+          "type": "image",
+          "url": "/src/assets/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
+          "altText": "Black Seed Oil_ Benefits, Side Effects, Recipes, and How to Use It - Bernadette Lance"
+        }
+      ]
+    },
+    {
+      "id": "prod-energy-nut-mix-40g",
+      "name": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+      "slug": "energy-nut-mix-40g",
+      "categoryId": "cat-nuts-seeds",
+      "shortDescription": "GoodZeed Energy Nut Mix 40g sachet — dry-roasted almonds, cashews, peanuts & sunflower seeds for instant everyday energy at just ৳40.",
+      "fullDescription": "GoodZeed Energy Nut Mix is an affordable on-the-go power sachet. A crunchy blend of almonds, cashews, peanuts and sunflower seeds, dry-roasted without added oil to preserve natural taste and nutrition. Perfect for office tiffin, school snacks, travel, pre-workout fuel or evening hunger — 40g of clean energy with no artificial flavours, colours or preservatives.",
+      "ingredients": "Almonds, Cashews, Peanuts, Sunflower Seeds, Pumpkin Seeds (dry-roasted, no added oil)",
+      "nutritionInfo": "Per 40g pack (approx): Energy 228 kcal, Protein 7.2g, Healthy Fats 18.5g, Carbohydrates 8.1g, Dietary Fiber 3.4g, Vitamin E, Magnesium, Zinc.",
+      "originInfo": "Blended & packed by GoodZeed, Dhaka, Bangladesh from verified local & imported nut lots.",
+      "purityInfo": "Dry-roasted, no added oil. No artificial salt overload, no sugar coating, no preservatives. Hygienically sealed sachet.",
+      "storageInstructions": "Store in a cool, dry place away from sunlight. Consume immediately after opening for best crunch.",
+      "usageInstructions": "Eat directly as a ready snack. 1 sachet daily for office, school tiffin, travel, gym or iftar energy boost.",
+      "seoTitle": "Energy Nut Mix 40g - ৳40 Healthy Snacks | GoodZeed",
+      "seoDescription": "Buy GoodZeed Energy Nut Mix 40g at ৳40. Almonds, cashews & seeds dry-roasted snack. Cash on Delivery all over Bangladesh.",
+      "images": [
+        "/src/assets/uploads/energy-nut-mix-trio-pack.jpeg",
+        "/src/assets/uploads/energy-nut-mix-40g.jpeg"
+      ],
+      "media": [
+        {
+          "id": "med-energy-40g-trio",
+          "type": "image",
+          "url": "/src/assets/uploads/energy-nut-mix-trio-pack.jpeg",
+          "altText": "GoodZeed Energy Nut Mix trio packs with sunflower seeds - MRP 40tk"
+        },
+        {
+          "id": "med-energy-40g-1",
+          "type": "image",
+          "url": "/src/assets/uploads/energy-nut-mix-40g.jpeg",
+          "altText": "GoodZeed Energy Nut Mix 40g sachet - MRP 40tk"
+        }
+      ],
+      "isFeatured": true,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.9,
+      "reviewCount": 11,
+      "variants": [
+        {
+          "id": "var-energy-40g",
+          "productId": "prod-energy-nut-mix-40g",
+          "sku": "GZ-NUT-ENM-40G",
+          "label": "40g Sachet (1 pc)",
+          "sizeValue": 40,
+          "sizeUnit": "g",
+          "price": 40,
+          "salePrice": null,
+          "stock": 199,
+          "lowStockThreshold": 20,
+          "isEnabled": true
+        },
+        {
+          "id": "var-energy-5pack",
+          "productId": "prod-energy-nut-mix-40g",
+          "sku": "GZ-NUT-ENM-5PK",
+          "label": "5-Sachet Combo (200g)",
+          "sizeValue": 200,
+          "sizeUnit": "g",
+          "price": 200,
+          "salePrice": 190,
+          "stock": 80,
+          "lowStockThreshold": 10,
+          "isEnabled": true
+        },
+        {
+          "id": "var-energy-10pack",
+          "productId": "prod-energy-nut-mix-40g",
+          "sku": "GZ-NUT-ENM-10PK",
+          "label": "Family Box (10 pcs)",
+          "sizeValue": 400,
+          "sizeUnit": "g",
+          "price": 400,
+          "salePrice": 370,
+          "stock": 50,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "id": "prod-wild-forest-honey",
+      "name": "Wild Forest Honey (বনের মধু)",
+      "slug": "wild-forest-honey",
+      "categoryId": "cat-honey",
+      "shortDescription": "Multi-floral wild honey from Bangladesh central forest regions, harvested by traditional beekeepers using sustainable methods.",
+      "fullDescription": "Our Wild Forest Honey is collected from diverse forest blossoms across central Bangladesh, capturing the essence of seasonal wildflowers. This raw, unprocessed honey retains natural enzymes, pollen, and antioxidants that make forest honey so valuable. The complex flavor profile reflects the varied flora of Bangladesh forest ecosystems. No heat processing, no filtration, no additives — just pure wild nectar transformed by nature finest workers. Each batch varies slightly in color and flavor, reflecting the seasonal blooms. GoodZeed Wild Forest Honey comes from beekeepers who practice sustainable apiculture, allowing wild colonies to thrive while harvesting surplus honey. The honey is never heated above ambient temperature and is only lightly strained to remove beeswax particles — preserving all the natural goodness that makes raw honey so special. Perfect for daily wellness rituals, this honey adds depth to tea, enhances salad dressings, and provides a natural energy boost when you need it most. Its complex flavor profile ranges from mild floral notes to deeper woody undertones depending on the season of harvest. Store at room temperature. Over time, natural crystallization may occur — this is proof of purity, not a defect. Gently warm the jar in water to return to liquid state.",
+      "ingredients": "100% Pure Wild Forest Honey (Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g, Protein 0.3g, Enzymes & Minerals (Zinc, Iron, Potassium).",
+      "originInfo": "Central Forest Regions of Bangladesh, sustainably harvested by traditional beekeepers.",
+      "purityInfo": "Raw, unheated, unfiltered. Tested for pollen concentration and natural enzyme activity.",
+      "storageInstructions": "Store at room temperature in a dry place. Do not refrigerate. Crystallization is natural and indicates pure raw honey.",
+      "usageInstructions": "Enjoy 1-2 teaspoons daily directly, with warm lemon water in the morning, drizzled over yogurt or oats, or use as a natural sweetener in tea and cooking.",
+      "seoTitle": "Wild Forest Honey - Pure Multi-Floral Raw Honey Bangladesh | GoodZeed",
+      "seoDescription": "Buy authentic wild forest honey from Bangladesh central forests. Raw, unprocessed multi-floral honey with natural enzymes and antioxidants. Pure and sustainable.",
+      "tags": [
+        "wild honey",
+        "forest honey",
+        "multi-floral",
+        "raw honey",
+        "natural energy",
+        "immune support",
+        "Bangladesh honey",
+        "sustainable beekeeping"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1599061086948-7a218b648123?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": false,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.7,
+      "reviewCount": 8,
+      "variants": [
+        {
+          "id": "var-wild-250",
+          "productId": "prod-wild-forest-honey",
+          "sku": "GZ-HNY-WILD-250G",
+          "label": "250g Glass Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 380,
+          "salePrice": 340,
+          "stock": 45,
+          "lowStockThreshold": 10,
+          "isEnabled": true
+        },
+        {
+          "id": "var-wild-500",
+          "productId": "prod-wild-forest-honey",
+          "sku": "GZ-HNY-WILD-500G",
+          "label": "500g Glass Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 720,
+          "salePrice": 650,
+          "stock": 30,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        }
+      ]
+    },
+    {
+      "id": "prod-mustard-flower-honey",
+      "name": "Mustard Flower Honey (সরিষার মোড়ে মধু)",
+      "slug": "mustard-flower-honey",
+      "categoryId": "cat-honey",
+      "shortDescription": "Delicate light-colored honey from mustard fields with subtle sweet flavor and floral aroma unique to mustard nectar.",
+      "fullDescription": "Mustard Flower Honey is a seasonal delicacy produced when bees forage exclusively in blooming mustard fields during the winter months. This light golden honey has a gentle, delicate sweetness with distinct floral undertones — a far cry from the robust flavor of wild forest honey. The translucent amber color and smooth creamy texture make it perfect for children and those who prefer milder honey. Harvested during the brief mustard blooming season (December-January), this is a limited-availability product that connoisseurs eagerly anticipate each year. The honey crystallizes quickly due to its high glucose content — a natural sign of its purity and raw state. When crystallized the honey becomes spreadable and even more delightful on warm toast or mixed into warm milk. Our mustard honey comes from small-scale farmers in Rajshahi and Natore regions where extensive mustard fields create vast foraging grounds for honeybees. The bees are cared for by experienced apiculturists who ensure colony health without the use of chemicals. This honey pairs beautifully with mild cheeses drizzled over warm paratha or simply enjoyed by the spoonful for its soothing qualities.",
+      "ingredients": "100% Pure Mustard Flower Honey (Raw, Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g, Protein 0.3g, Enzymes, Trace Minerals.",
+      "originInfo": "Mustard fields of Rajshahi and Natore, Bangladesh — winter seasonal harvest.",
+      "purityInfo": "Raw and unheated. Lab tested negative for sugar syrup adulteration. Natural crystallization within 4-6 weeks.",
+      "storageInstructions": "Store at room temperature. May crystallize quickly — this is natural and desirable. Gently warm to liquefy.",
+      "usageInstructions": "Spread on warm toast, drizzle over yogurt or oatmeal, add to warm milk before bed, or enjoy by the spoonful for soothing throat relief.",
+      "seoTitle": "Mustard Flower Honey - Seasonal Light Raw Honey Bangladesh | GoodZeed",
+      "seoDescription": "Limited edition mustard flower honey — delicate, light, and floral. Seasonal raw honey from blooming mustard fields of Rajshahi. Perfect for children.",
+      "tags": [
+        "mustard honey",
+        "seasonal honey",
+        "light honey",
+        "floral honey",
+        "winter honey",
+        "children honey",
+        "limited edition",
+        "Rajshahi honey"
+      ],
+      "images": [
+        "/src/assets/uploads/1789308219188-k7z9is-3448137210774719.jpg",
+        "/src/assets/uploads/1789308182272-5s3v2p-13861748_1280_720_50fps.mp4"
+      ],
+      "isFeatured": true,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.8,
+      "reviewCount": 12,
+      "variants": [
+        {
+          "id": "var-mustard-250",
+          "productId": "prod-mustard-flower-honey",
+          "sku": "GZ-HNY-MUST-250G",
+          "label": "250g Glass Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 420,
+          "salePrice": 380,
+          "stock": 25,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        },
+        {
+          "id": "var-mustard-500",
+          "productId": "prod-mustard-flower-honey",
+          "sku": "GZ-HNY-MUST-500G",
+          "label": "500g Glass Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 790,
+          "salePrice": 720,
+          "stock": 15,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789308219193-pcrmd",
+          "type": "image",
+          "url": "/src/assets/uploads/1789308219188-k7z9is-3448137210774719.jpg",
+          "altText": "3448137210774719"
+        },
+        {
+          "id": "pm-1789308182307-2rizg",
+          "type": "video",
+          "url": "/src/assets/uploads/1789308182272-5s3v2p-13861748_1280_720_50fps.mp4",
+          "altText": "13861748_1280_720_50fps",
+          "videoSource": "direct"
+        }
+      ]
+    },
+    {
+      "id": "prod-honey-family-pack",
+      "name": "100% Pure Forest Honey - 1kg Family Pack (১ কেজি বনের মধু)",
+      "slug": "pure-forest-honey-family-pack",
+      "categoryId": "cat-honey",
+      "shortDescription": "Large 1kg family pack of pure wild forest honey for everyday use — economical and perfect for regular honey consumers.",
+      "fullDescription": "The 1kg Family Pack of our Wild Forest Honey is designed for regular consumers — families who use honey daily in warm water tea cooking or as a natural sweetener. This larger pack offers the best value while maintaining the same uncompromising purity as our smaller jars. The honey is collected from deep forest areas by experienced Mouals (traditional honey collectors) who have perfected their craft over generations. These skilled harvesters work respectfully with the forest ecosystem taking only surplus honey and ensuring wild colonies remain healthy and productive. Stored in a food-grade PET jar with a wide mouth for easy scooping. The 1kg size is ideal for daily family consumption regular warm lemon water routine cooking and baking substitute for refined sugar natural energy for athletes and gym-goers and preserving fruits and making preserves. An excellent choice for households gym-goers and anyone who wants pure honey within reach. At this size the price per gram is significantly lower than smaller packs — making purity affordable for everyday use. This product ships with extra protective packaging to prevent breakage during delivery across Bangladesh.",
+      "ingredients": "100% Pure Wild Forest Honey (Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g, Protein 0.3g, Enzymes & Minerals.",
+      "originInfo": "Sundarban Forest Biosphere Reserve and central Bangladesh forests, harvested by traditional Mouals.",
+      "purityInfo": "Raw, unheated, unfiltered. Tested for pollen concentration and moisture content <19%. No added sugar or syrup.",
+      "storageInstructions": "Store at room temperature in a dry place. Wide-mouth jar allows easy scooping. Crystallization is natural.",
+      "usageInstructions": "Enjoy daily — 1-2 teaspoons in warm water, with lemon, drizzled over nuts and oats, or as a natural sweetener in recipes.",
+      "seoTitle": "Pure Forest Honey 1kg Family Pack - Best Value Raw Honey | GoodZeed",
+      "seoDescription": "Economical 1kg family pack of pure wild forest honey. Best value for regular honey users. Raw, unprocessed, and full of natural goodness. Free delivery on orders over 2000.",
+      "tags": [
+        "family pack",
+        "bulk honey",
+        "1kg honey",
+        "household honey",
+        "everyday honey",
+        "value pack",
+        "pure honey",
+        "Bangladesh honey"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true,
+      "isBestSeller": true,
+      "isNew": false,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.9,
+      "reviewCount": 28,
+      "variants": [
+        {
+          "id": "var-honey-fam-1kg",
+          "productId": "prod-honey-family-pack",
+          "sku": "GZ-HNY-FAM-1KG",
+          "label": "1kg Family Pack",
+          "sizeValue": 1,
+          "sizeUnit": "kg",
+          "price": 1450,
+          "salePrice": 1320,
+          "stock": 20,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "media-1-1789308066253",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-acacia-honey",
+      "name": "Acacia Honey - Light & Delicate (আকাশিয়া মধু)",
+      "slug": "acacia-honey-light-delicate",
+      "categoryId": "cat-honey",
+      "shortDescription": "Crystal-clear light amber honey from acacia blossoms — mild, sweet, and slow to crystallize, perfect for beverages.",
+      "fullDescription": "Our Acacia Honey is a premium variety known for its exceptional clarity mild sweetness and remarkable resistance to crystallization. Made from the nectar of black locust (acacia) flowers this honey remains liquid for months due to its high fructose content — a prized characteristic for those who prefer honey in liquid form. The pale straw color and delicate flavor make acacia honey one of the most versatile honeys for culinary uses. It adds sweetness without overpowering other flavors — perfect for sweetening tea coffee and other hot beverages drizzling over fruit salads and desserts glazing roasted vegetables and meats mixing into smoothies without altering the base flavor and as an infant-safe sweetener (after 12 months of age consult pediatrician). Our acacia honey comes from hilly regions where acacia trees bloom profusely in spring. The honey is carefully harvested and filtered through fine mesh to achieve its signature clear appearance while preserving natural enzymes. Note: Acacia honey has a higher fructose-to-glucose ratio which is why it stays liquid longer than other honeys. This is a natural characteristic not an indication of processing.",
+      "ingredients": "100% Pure Acacia Flower Honey (Raw, Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g (higher fructose ratio), Protein 0.3g, Enzymes, Trace Minerals.",
+      "originInfo": "Hill tracts and acacia-rich regions of Bangladesh — spring bloom harvest.",
+      "purityInfo": "Raw and unheated. Naturally stays liquid longer due to high fructose content. Lab tested for purity.",
+      "storageInstructions": "Store at room temperature in a dry place. Naturally stays liquid for months — no refrigeration needed.",
+      "usageInstructions": "Perfect for sweetening beverages, drizzling over desserts, glazing foods, or mixing into smoothies. Gentle enough for children over 1 year.",
+      "seoTitle": "Acacia Honey - Light Delicate Raw Honey Bangladesh | GoodZeed",
+      "seoDescription": "Premium acacia honey — crystal clear, mild, and stays liquid for months. Perfect for tea, beverages, and kids. Pure raw honey from Bangladesh hill tracts.",
+      "tags": [
+        "acacia honey",
+        "light honey",
+        "clear honey",
+        "liquid honey",
+        "mild honey",
+        "beverage honey",
+        "child-friendly honey",
+        "high fructose"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": false,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.6,
+      "reviewCount": 6,
+      "variants": [
+        {
+          "id": "var-acacia-250",
+          "productId": "prod-acacia-honey",
+          "sku": "GZ-HNY-ACACIA-250G",
+          "label": "250g Glass Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 450,
+          "salePrice": 400,
+          "stock": 35,
+          "lowStockThreshold": 8,
+          "isEnabled": true
+        },
+        {
+          "id": "var-acacia-500",
+          "productId": "prod-acacia-honey",
+          "sku": "GZ-HNY-ACACIA-500G",
+          "label": "500g Glass Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 850,
+          "salePrice": 760,
+          "stock": 20,
+          "lowStockThreshold": 5,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "media-1-1789308076029",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-tualang-honey",
+      "name": "Tualang Rainforest Honey (তুয়ালাং বনের মধু)",
+      "slug": "tualang-rainforest-honey",
+      "categoryId": "cat-honey",
+      "shortDescription": "Rare and exotic honey from giant Tualang trees in Southeast Asian rainforests — complex, mineral-rich, and highly sought after.",
+      "fullDescription": "Tualang Honey is one of the most prized honeys in the world produced by giant rock bees (Apis dorsata) that build enormous honeycombs on the branches of Tualang trees in the rainforest canopy. These trees can reach 80 meters in height and the honey is harvested by skilled climbers using traditional techniques passed down through generations. This honey has a complex rich flavor profile with hints of tropical fruits herbal notes and a distinctive mineral quality from the diverse rainforest flora. The color ranges from golden to dark amber and the consistency is thick and creamy. Tualang honey is renowned in traditional medicine for its potent antimicrobial and antioxidant properties. Our Tualang honey is ethically sourced from sustainable harvesters in Southeast Asian rainforest regions ensuring that the giant bee colonies are not harmed during harvest. Only surplus honey is collected leaving enough for the bees through the dry season. This is a limited and premium product — perfect for gifting special occasions or for those who appreciate the finest most complex honeys available. Each jar represents a genuine connection to ancient harvesting traditions and pristine rainforest ecosystems. Due to its rarity and the difficulty of harvest Tualang honey commands a premium price. We source limited batches throughout the year.",
+      "ingredients": "100% Pure Tualang Rainforest Honey (Wild-harvested, Raw, Unpasteurized)",
+      "nutritionInfo": "Per 100g: Energy 304 kcal, Carbohydrates 82g, Natural Sugars 81g, Protein 0.3g, High antioxidant levels, Unique mineral profile.",
+      "originInfo": "Tualang trees in Southeast Asian rainforest canopy — ethically harvested by skilled traditional climbers.",
+      "purityInfo": "Wild-harvested from giant bee colonies. Raw, unheated. Rich in unique antioxidants and minerals from diverse rainforest flora.",
+      "storageInstructions": "Store at room temperature in a dry place away from direct sunlight. Keep tightly sealed after opening.",
+      "usageInstructions": "Enjoy by the spoonful for its complex flavor, use sparingly in premium desserts, pair with cheese, or take 1 teaspoon daily for wellness.",
+      "seoTitle": "Tualang Rainforest Honey - Rare Premium Wild Honey | GoodZeed",
+      "seoDescription": "Rare and exotic Tualang honey from giant rock bees in Southeast Asian rainforest canopy. Complex flavor, high antioxidants, ethically wild-harvested. Premium gift option.",
+      "tags": [
+        "tualang honey",
+        "rainforest honey",
+        "wild bee honey",
+        "giant bee honey",
+        "rare honey",
+        "premium honey",
+        "complex flavor",
+        "antioxidant honey",
+        "gift honey",
+        "exotic honey"
+      ],
+      "images": [
+        "/src/assets/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
+      ],
+      "isFeatured": true,
+      "isBestSeller": false,
+      "isNew": true,
+      "isEnabled": true,
+      "isPublished": true,
+      "rating": 4.9,
+      "reviewCount": 4,
+      "variants": [
+        {
+          "id": "var-tualang-250",
+          "productId": "prod-tualang-honey",
+          "sku": "GZ-HNY-TUAL-250G",
+          "label": "250g Premium Jar",
+          "sizeValue": 250,
+          "sizeUnit": "g",
+          "price": 980,
+          "salePrice": 890,
+          "stock": 12,
+          "lowStockThreshold": 3,
+          "isEnabled": true
+        },
+        {
+          "id": "var-tualang-500",
+          "productId": "prod-tualang-honey",
+          "sku": "GZ-HNY-TUAL-500G",
+          "label": "500g Premium Jar",
+          "sizeValue": 500,
+          "sizeUnit": "g",
+          "price": 1850,
+          "salePrice": 1690,
+          "stock": 6,
+          "lowStockThreshold": 2,
+          "isEnabled": true
+        }
+      ],
+      "media": [
+        {
+          "id": "pm-1789308121011-zv0wf",
+          "type": "image",
+          "url": "/src/assets/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
+          "altText": "Black Seed Oil_ Benefits, Side Effects, Recipes, and How to Use It - Bernadette Lance"
+        }
+      ]
+    }
+  ],
+  "inventoryAdjustments": [
+    {
+      "id": "adj-1789355686077",
+      "productVariantId": "var-bso-100",
+      "productId": "prod-black-seed-oil",
+      "productName": "Extra Virgin Cold-Pressed Black Seed Oil (কালিজিরা তেল)",
+      "variantLabel": "100ml Glass Dropper",
+      "changeAmount": 10,
+      "reason": "Fresh harvest restock batch",
+      "adjustedByAdminId": "admin-01",
+      "stockAfter": 13,
+      "createdAt": "2026-09-14T03:14:46.077Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-1789355860184-pp3lc",
+      "orderNumber": "GZ-2026-9231",
+      "customerId": "cust-1789109306173",
+      "customerNameSnapshot": "Sabbir",
+      "customerPhoneSnapshot": "01639639828",
+      "deliveryAddressSnapshot": "cumilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "SHIPPED",
+      "subtotal": 990,
+      "deliveryCharge": 70,
+      "total": 1060,
+      "source": "CART",
+      "createdAt": "2026-09-14T03:17:40.182Z",
+      "updatedAt": "2026-09-14T03:18:17.062Z",
+      "payment": {
+        "id": "pay-1789355860184",
+        "orderId": "order-1789355860184-pp3lc",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789355860184",
+        "orderId": "order-1789355860184-pp3lc",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789355860184-6997",
+          "orderId": "order-1789355860184-pp3lc",
+          "productId": "prod-sundarban-honey",
+          "productVariantId": "var-sun-250",
+          "productNameSnapshot": "Raw Sundarban Khalsi Honey (সুন্দরবনের খলসী মধু)",
+          "variantLabelSnapshot": "250g Glass Jar",
+          "unitPriceSnapshot": 470,
+          "quantity": 1,
+          "lineSubtotal": 470,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "item-1789355860184-0119",
+          "orderId": "order-1789355860184-pp3lc",
+          "productId": "prod-organic-chia-seeds",
+          "productVariantId": "var-chia-250",
+          "productNameSnapshot": "Certified Organic Chia Seeds (অর্গানিক চিয়া সিড)",
+          "variantLabelSnapshot": "250g Zip Pouch",
+          "unitPriceSnapshot": 280,
+          "quantity": 1,
+          "lineSubtotal": 280,
+          "productImageSnapshot": "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
+        },
+        {
+          "id": "item-1789355860184-8249",
+          "orderId": "order-1789355860184-pp3lc",
+          "productId": "prod-mustard-oil",
+          "productVariantId": "var-mustard-500",
+          "productNameSnapshot": "Cold-Pressed Extra Virgin Mustard Oil (ঘানি ভাঙা সরিষার তেল)",
+          "variantLabelSnapshot": "500ml Bottle",
+          "unitPriceSnapshot": 240,
+          "quantity": 1,
+          "lineSubtotal": 240,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "invoice": {
+        "id": "inv-1789355893491",
+        "orderId": "order-1789355860184-pp3lc",
+        "invoiceNumber": "GZ-INV-000107",
+        "issuedAt": "2026-09-14T03:18:13.491Z",
+        "reprintedCount": 1
+      }
+    },
+    {
+      "id": "order-1789189842461-lna7h",
+      "orderNumber": "GZ-2026-9956",
+      "customerId": "cust-1789182322196",
+      "customerNameSnapshot": "Md Shabbir",
+      "customerPhoneSnapshot": "01310479623",
+      "deliveryAddressSnapshot": "Cumilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 40,
+      "deliveryCharge": 70,
+      "total": 110,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-12T05:10:42.460Z",
+      "updatedAt": "2026-09-12T05:10:42.460Z",
+      "payment": {
+        "id": "pay-1789189842462",
+        "orderId": "order-1789189842461-lna7h",
+        "method": "BKASH",
+        "status": "AWAITING_VERIFICATION",
+        "transactionId": "GJVJUG76H"
+      },
+      "delivery": {
+        "id": "del-1789189842462",
+        "orderId": "order-1789189842461-lna7h",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789189842462-5135",
+          "orderId": "order-1789189842461-lna7h",
+          "productId": "prod-energy-nut-mix-40g",
+          "productVariantId": "var-energy-40g",
+          "productNameSnapshot": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+          "variantLabelSnapshot": "40g Sachet (1 pc)",
+          "unitPriceSnapshot": 40,
+          "quantity": 1,
+          "lineSubtotal": 40,
+          "productImageSnapshot": "/uploads/energy-nut-mix-trio-pack.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "order-1789182322196-biypr",
+      "orderNumber": "GZ-2026-6767",
+      "customerId": "cust-1789182322196",
+      "customerNameSnapshot": "Md Shabbir",
+      "customerPhoneSnapshot": "01310479623",
+      "deliveryAddressSnapshot": "Cumilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 240,
+      "deliveryCharge": 70,
+      "total": 310,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-12T03:05:22.191Z",
+      "updatedAt": "2026-09-12T03:05:22.191Z",
+      "payment": {
+        "id": "pay-1789182322196",
+        "orderId": "order-1789182322196-biypr",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789182322196",
+        "orderId": "order-1789182322196-biypr",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789182322196-2746",
+          "orderId": "order-1789182322196-biypr",
+          "productId": "prod-mustard-oil",
+          "productVariantId": "var-mustard-500",
+          "productNameSnapshot": "Cold-Pressed Extra Virgin Mustard Oil (ঘানি ভাঙা সরিষার তেল)",
+          "variantLabelSnapshot": "500ml Bottle",
+          "unitPriceSnapshot": 240,
+          "quantity": 1,
+          "lineSubtotal": 240,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "order-1789161354779-5wzga",
+      "orderNumber": "GZ-2026-6949",
+      "customerId": "cust-1789161354779",
+      "customerNameSnapshot": "muhammad",
+      "customerPhoneSnapshot": "01832197987",
+      "deliveryAddressSnapshot": "barista, chaddagram ,camilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 40,
+      "deliveryCharge": 70,
+      "total": 110,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-11T21:15:54.779Z",
+      "updatedAt": "2026-09-11T21:15:54.779Z",
+      "payment": {
+        "id": "pay-1789161354779",
+        "orderId": "order-1789161354779-5wzga",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789161354779",
+        "orderId": "order-1789161354779-5wzga",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789161354779-5252",
+          "orderId": "order-1789161354779-5wzga",
+          "productId": "prod-energy-nut-mix-40g",
+          "productVariantId": "var-energy-40g",
+          "productNameSnapshot": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+          "variantLabelSnapshot": "40g Sachet (1 pc)",
+          "unitPriceSnapshot": 40,
+          "quantity": 1,
+          "lineSubtotal": 40,
+          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+        }
+      ],
+      "invoice": {
+        "id": "inv-1789161369653",
+        "orderId": "order-1789161354779-5wzga",
+        "invoiceNumber": "GZ-INV-000106",
+        "issuedAt": "2026-09-11T21:16:09.653Z",
+        "reprintedCount": 1
+      }
+    },
+    {
+      "id": "order-1789154645083-0e4vr",
+      "orderNumber": "GZ-2026-6693",
+      "customerId": "cust-1789154645083",
+      "customerNameSnapshot": "ahmmed",
+      "customerPhoneSnapshot": "01639639827",
+      "deliveryAddressSnapshot": "Camilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 40,
+      "deliveryCharge": 70,
+      "total": 110,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-11T19:24:05.083Z",
+      "updatedAt": "2026-09-11T19:24:05.083Z",
+      "payment": {
+        "id": "pay-1789154645083",
+        "orderId": "order-1789154645083-0e4vr",
+        "method": "BKASH",
+        "status": "AWAITING_VERIFICATION",
+        "transactionId": "ASHDFLNJKSLNK"
+      },
+      "delivery": {
+        "id": "del-1789154645083",
+        "orderId": "order-1789154645083-0e4vr",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789154645083-1329",
+          "orderId": "order-1789154645083-0e4vr",
+          "productId": "prod-energy-nut-mix-40g",
+          "productVariantId": "var-energy-40g",
+          "productNameSnapshot": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+          "variantLabelSnapshot": "40g Sachet (1 pc)",
+          "unitPriceSnapshot": 40,
+          "quantity": 1,
+          "lineSubtotal": 40,
+          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "order-1789154561694-u5q71",
+      "orderNumber": "GZ-2026-3423",
+      "customerId": "cust-1789154561694",
+      "customerNameSnapshot": "sabbir",
+      "customerPhoneSnapshot": "01777118497",
+      "deliveryAddressSnapshot": "housing , Camilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 850,
+      "deliveryCharge": 70,
+      "total": 920,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-11T19:22:41.694Z",
+      "updatedAt": "2026-09-11T19:22:41.694Z",
+      "payment": {
+        "id": "pay-1789154561694",
+        "orderId": "order-1789154561694-u5q71",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789154561694",
+        "orderId": "order-1789154561694-u5q71",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789154561694-2702",
+          "orderId": "order-1789154561694-u5q71",
+          "productId": "prod-medjool-dates",
+          "productVariantId": "var-date-500",
+          "productNameSnapshot": "Premium Medjool Dates (প্রিমিয়াম মেডজুল খেজুর)",
+          "variantLabelSnapshot": "500g Gift Box",
+          "unitPriceSnapshot": 850,
+          "quantity": 1,
+          "lineSubtotal": 850,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "order-1789109306173-rnaot",
+      "orderNumber": "GZ-2026-3729",
+      "customerId": "cust-1789109306173",
+      "customerNameSnapshot": "kamrul",
+      "customerPhoneSnapshot": "01639639828",
+      "deliveryAddressSnapshot": "dhaka",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PROCESSING",
+      "subtotal": 200,
+      "deliveryCharge": 70,
+      "total": 270,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-11T06:48:26.173Z",
+      "updatedAt": "2026-09-11T12:57:49.175Z",
+      "payment": {
+        "id": "pay-1789109306173",
+        "orderId": "order-1789109306173-rnaot",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789109306173",
+        "orderId": "order-1789109306173-rnaot",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789109306173-3614",
+          "orderId": "order-1789109306173-rnaot",
+          "productId": "prod-energy-nut-mix-40g",
+          "productVariantId": "var-energy-40g",
+          "productNameSnapshot": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+          "variantLabelSnapshot": "40g Sachet (1 pc)",
+          "unitPriceSnapshot": 40,
+          "quantity": 5,
+          "lineSubtotal": 200,
+          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+        }
+      ],
+      "invoice": {
+        "id": "inv-1789109325105",
+        "orderId": "order-1789109306173-rnaot",
+        "invoiceNumber": "GZ-INV-000104",
+        "issuedAt": "2026-09-11T06:48:45.105Z",
+        "reprintedCount": 1
+      }
+    },
+    {
+      "id": "order-1789108311533-0mxfq",
+      "orderNumber": "GZ-2026-9387",
+      "customerId": "cust-1789108311533",
+      "customerNameSnapshot": "Sabbir",
+      "customerPhoneSnapshot": "01572945718",
+      "deliveryAddressSnapshot": "housing , cumilla",
+      "deliveryDistrict": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "deliveryNotes": "",
+      "internalAdminNotes": "",
+      "internalNotes": [],
+      "status": "PENDING",
+      "subtotal": 40,
+      "deliveryCharge": 70,
+      "total": 110,
+      "source": "BUY_NOW",
+      "createdAt": "2026-09-11T06:31:51.533Z",
+      "updatedAt": "2026-09-11T06:31:51.533Z",
+      "payment": {
+        "id": "pay-1789108311533",
+        "orderId": "order-1789108311533-0mxfq",
+        "method": "COD",
+        "status": "PENDING",
+        "transactionId": ""
+      },
+      "delivery": {
+        "id": "del-1789108311533",
+        "orderId": "order-1789108311533-0mxfq",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED",
+        "estimatedDelivery": "24-48 Hours"
+      },
+      "items": [
+        {
+          "id": "item-1789108311533-9641",
+          "orderId": "order-1789108311533-0mxfq",
+          "productId": "prod-energy-nut-mix-40g",
+          "productVariantId": "var-energy-40g",
+          "productNameSnapshot": "Energy Nut Mix 40g (এনার্জি নাট মিক্স)",
+          "variantLabelSnapshot": "40g Sachet (1 pc)",
+          "unitPriceSnapshot": 40,
+          "quantity": 1,
+          "lineSubtotal": 40,
+          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+        }
+      ],
+      "invoice": {
+        "id": "inv-1789109918605",
+        "orderId": "order-1789108311533-0mxfq",
+        "invoiceNumber": "GZ-INV-000105",
+        "issuedAt": "2026-09-11T06:58:38.605Z",
+        "reprintedCount": 1
+      }
+    },
+    {
+      "id": "order-102",
+      "orderNumber": "GZ-2026-1042",
+      "customerId": "cust-2",
+      "customerNameSnapshot": "Farhan Ahmed",
+      "customerPhoneSnapshot": "01819223344",
+      "deliveryAddressSnapshot": "House 12, Block C, Halishahar, Chattogram",
+      "deliveryDistrict": "Outside Dhaka",
+      "deliveryNotes": "",
+      "status": "PENDING",
+      "subtotal": 990,
+      "deliveryCharge": 130,
+      "total": 1120,
+      "payment": {
+        "id": "pay-102",
+        "orderId": "order-102",
+        "method": "NAGAD",
+        "status": "AWAITING_VERIFICATION",
+        "transactionId": "7X8190B2CD"
+      },
+      "delivery": {
+        "id": "del-102",
+        "orderId": "order-102",
+        "deliveryZoneId": "zone-dhaka-out",
+        "zoneNameSnapshot": "Outside Dhaka (সমগ্র বাংলাদেশ)",
+        "chargeSnapshot": 130,
+        "method": "COURIER",
+        "status": "NOT_DISPATCHED"
+      },
+      "items": [
+        {
+          "id": "item-102-1",
+          "orderId": "order-102",
+          "productId": "prod-mustard-oil",
+          "productVariantId": "var-mustard-1000",
+          "productNameSnapshot": "Cold-Pressed Extra Virgin Mustard Oil (ঘানি ভাঙা সরিষার তেল)",
+          "variantLabelSnapshot": "1 Liter Bottle",
+          "unitPriceSnapshot": 420,
+          "quantity": 1,
+          "lineSubtotal": 420,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "id": "item-102-2",
+          "orderId": "order-102",
+          "productId": "prod-organic-chia-seeds",
+          "productVariantId": "var-chia-500",
+          "productNameSnapshot": "Certified Organic Chia Seeds (অর্গানিক চিয়া সিড)",
+          "variantLabelSnapshot": "500g Value Pack",
+          "unitPriceSnapshot": 520,
+          "quantity": 1,
+          "lineSubtotal": 520,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "internalAdminNotes": "Awaiting Nagad statement check.",
+      "source": "CART",
+      "createdAt": "2026-09-07T09:15:00.000Z",
+      "updatedAt": "2026-09-07T09:15:00.000Z",
+      "internalNotes": [
+        {
+          "id": "note-init-order-102",
+          "note": "Awaiting Nagad statement check.",
+          "createdBy": "Admin / System",
+          "createdAt": "2026-09-07T09:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "order-101",
+      "orderNumber": "GZ-2026-1041",
+      "customerId": "cust-1",
+      "customerNameSnapshot": "Rima Sultana",
+      "customerPhoneSnapshot": "01711998877",
+      "deliveryAddressSnapshot": "Flat 4B, House 18, Road 4, Dhanmondi, Dhaka",
+      "deliveryDistrict": "Inside Dhaka",
+      "deliveryNotes": "Please call before delivery",
+      "status": "CONFIRMED",
+      "subtotal": 890,
+      "deliveryCharge": 70,
+      "total": 960,
+      "payment": {
+        "id": "pay-101",
+        "orderId": "order-101",
+        "method": "BKASH",
+        "status": "PAID",
+        "transactionId": "9K28DF71XA",
+        "verifiedByAdminId": "admin-01",
+        "verifiedAt": "2026-09-06T15:00:00.000Z"
+      },
+      "delivery": {
+        "id": "del-101",
+        "orderId": "order-101",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "OWN_DELIVERY",
+        "status": "DISPATCHED",
+        "estimatedDelivery": "Tomorrow afternoon"
+      },
+      "invoice": {
+        "id": "inv-101",
+        "orderId": "order-101",
+        "invoiceNumber": "GZ-INV-000101",
+        "issuedAt": "2026-09-06T15:05:00.000Z",
+        "reprintedCount": 1
+      },
+      "items": [
+        {
+          "id": "item-101-1",
+          "orderId": "order-101",
+          "productId": "prod-sundarban-honey",
+          "productVariantId": "var-sun-500",
+          "productNameSnapshot": "Raw Sundarban Khalsi Honey (সুন্দরবনের খলসী মধু)",
+          "variantLabelSnapshot": "500g Glass Jar",
+          "unitPriceSnapshot": 890,
+          "quantity": 1,
+          "lineSubtotal": 890,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "internalAdminNotes": "bKash transaction verified against statement.",
+      "source": "CART",
+      "createdAt": "2026-09-06T14:30:00.000Z",
+      "updatedAt": "2026-09-06T15:00:00.000Z",
+      "internalNotes": [
+        {
+          "id": "note-init-order-101",
+          "note": "bKash transaction verified against statement.",
+          "createdBy": "Admin / System",
+          "createdAt": "2026-09-06T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "order-103",
+      "orderNumber": "GZ-2026-1043",
+      "customerId": "cust-1",
+      "customerNameSnapshot": "Rima Sultana",
+      "customerPhoneSnapshot": "01711998877",
+      "deliveryAddressSnapshot": "Flat 4B, House 18, Road 4, Dhanmondi, Dhaka",
+      "deliveryDistrict": "Inside Dhaka",
+      "deliveryNotes": "COD requested",
+      "status": "DELIVERED",
+      "subtotal": 800,
+      "deliveryCharge": 70,
+      "total": 870,
+      "payment": {
+        "id": "pay-103",
+        "orderId": "order-103",
+        "method": "COD",
+        "status": "PAID",
+        "verifiedByAdminId": "admin-01",
+        "verifiedAt": "2026-08-22T16:00:00.000Z"
+      },
+      "delivery": {
+        "id": "del-103",
+        "orderId": "order-103",
+        "deliveryZoneId": "zone-dhaka-in",
+        "zoneNameSnapshot": "Inside Dhaka City (ঢাকা মেট্রো)",
+        "chargeSnapshot": 70,
+        "method": "OWN_DELIVERY",
+        "status": "DELIVERED"
+      },
+      "invoice": {
+        "id": "inv-103",
+        "orderId": "order-103",
+        "invoiceNumber": "GZ-INV-000099",
+        "issuedAt": "2026-08-21T11:00:00.000Z",
+        "reprintedCount": 2
+      },
+      "items": [
+        {
+          "id": "item-103-1",
+          "orderId": "order-103",
+          "productId": "prod-california-almonds",
+          "productVariantId": "var-almond-500",
+          "productNameSnapshot": "Premium California Almonds (কাঁচা কাঠবাদাম)",
+          "variantLabelSnapshot": "500g Jar",
+          "unitPriceSnapshot": 750,
+          "quantity": 1,
+          "lineSubtotal": 750,
+          "productImageSnapshot": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "internalAdminNotes": "Delivered successfully via in-house rider.",
+      "source": "BUY_NOW",
+      "createdAt": "2026-08-20T10:00:00.000Z",
+      "updatedAt": "2026-08-22T16:00:00.000Z",
+      "internalNotes": [
+        {
+          "id": "note-init-order-103",
+          "note": "Delivered successfully via in-house rider.",
+          "createdBy": "Admin / System",
+          "createdAt": "2026-08-20T10:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1789182322196",
+      "name": "Md Shabbir",
+      "phoneNormalized": "01310479623",
+      "phoneRaw": "01310479623",
+      "email": "mdsabbir624831@gmail.com",
+      "defaultAddress": "Cumilla",
+      "totalOrders": 2,
+      "totalSpend": 420,
+      "lastOrderAt": "2026-09-12T05:10:42.460Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-12T03:05:22.191Z"
+    },
+    {
+      "id": "cust-1789161354779",
+      "name": "muhammad",
+      "phoneNormalized": "01832197987",
+      "phoneRaw": "01832197987",
+      "defaultAddress": "barista, chaddagram ,camilla",
+      "totalOrders": 1,
+      "totalSpend": 110,
+      "lastOrderAt": "2026-09-11T21:15:54.779Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-11T21:15:54.779Z"
+    },
+    {
+      "id": "cust-1789154645083",
+      "name": "ahmmed",
+      "phoneNormalized": "01639639827",
+      "phoneRaw": "01639639827",
+      "defaultAddress": "Camilla",
+      "totalOrders": 1,
+      "totalSpend": 110,
+      "lastOrderAt": "2026-09-11T19:24:05.083Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-11T19:24:05.083Z"
+    },
+    {
+      "id": "cust-1789154561694",
+      "name": "sabbir",
+      "phoneNormalized": "01777118497",
+      "phoneRaw": "01777118497",
+      "defaultAddress": "housing , Camilla",
+      "totalOrders": 1,
+      "totalSpend": 920,
+      "lastOrderAt": "2026-09-11T19:22:41.694Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-11T19:22:41.694Z"
+    },
+    {
+      "id": "cust-1789109306173",
+      "name": "Sabbir",
+      "phoneNormalized": "01639639828",
+      "phoneRaw": "01639639828",
+      "defaultAddress": "cumilla",
+      "totalOrders": 2,
+      "totalSpend": 1330,
+      "lastOrderAt": "2026-09-14T03:17:40.182Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-11T06:48:26.173Z",
+      "email": "its.sabbir.online@gmail.com"
+    },
+    {
+      "id": "cust-1789108311533",
+      "name": "Sabbir",
+      "phoneNormalized": "01572945718",
+      "phoneRaw": "01572945718",
+      "defaultAddress": "housing , cumilla",
+      "totalOrders": 1,
+      "totalSpend": 110,
+      "lastOrderAt": "2026-09-11T06:31:51.533Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-11T06:31:51.533Z"
+    },
+    {
+      "id": "cust-1",
+      "name": "Rima Sultana",
+      "phoneNormalized": "01711998877",
+      "phoneRaw": "01711-998877",
+      "email": "rima.sultana@gmail.com",
+      "defaultAddress": "Flat 4B, House 18, Road 4, Dhanmondi, Dhaka",
+      "totalOrders": 2,
+      "totalSpend": 1830,
+      "lastOrderAt": "2026-09-06T14:30:00.000Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-08-20T10:00:00.000Z"
+    },
+    {
+      "id": "cust-2",
+      "name": "Farhan Ahmed",
+      "phoneNormalized": "01819223344",
+      "phoneRaw": "01819-223344",
+      "email": "farhan.bd@yahoo.com",
+      "defaultAddress": "House 12, Block C, Halishahar, Chattogram",
+      "totalOrders": 1,
+      "totalSpend": 1120,
+      "lastOrderAt": "2026-09-07T09:15:00.000Z",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-07T09:15:00.000Z"
+    }
+  ],
+  "nextInvoiceSequence": 108,
+  "deliveryZones": [
+    {
+      "id": "zone-dhaka-in",
+      "name": "Inside Dhaka City (ঢাকা মেট্রো)",
+      "charge": 70,
+      "estimatedDeliveryTime": "24-48 Hours",
+      "isEnabled": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "zone-dhaka-out",
+      "name": "Outside Dhaka (সমগ্র বাংলাদেশ)",
+      "charge": 130,
+      "estimatedDeliveryTime": "2-4 Business Days",
+      "isEnabled": true,
+      "sortOrder": 2
+    }
+  ],
+  "homepageSections": [
+    {
+      "id": "sec-hero",
+      "sectionType": "HERO",
+      "title": "Hero Banner",
+      "sortOrder": 1,
+      "isEnabled": true,
+      "heading": "Direct From Sundarban Mangroves 1789093535673",
+      "bodyText": "Directly sourced from Sundarban Mouals, organic seed farms, and traditional oil ghanis across Bangladesh. No preservatives, no shortcuts.",
+      "ctaLabel": "Shop Pure Food",
+      "ctaLink": "/shop",
+      "badge": "Nature's Finest Nutrition",
+      "heroImageUrl": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+      "mediaUrl": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+      "heroMedia": [
+        {
+          "id": "media-1789202576629-0-4q2pz",
+          "type": "video",
+          "url": "/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4",
+          "title": "13861748_1280_720_50fps",
+          "altText": "13861748_1280_720_50fps",
+          "videoSource": "direct",
+          "status": "published",
+          "overlay": "light",
+          "advancedHtml": "<!-- Enter custom HTML for this slide --><div class=\"hero-content\">\n\n    <span class=\"hero-badge\">\n        Fresh From Nature\n    </span>\n\n    <h1>\n        Premium Almonds Harvested With Care\n    </h1>\n\n    <p class=\"hero-subtitle\">\n        প্রকৃতির সেরা বাদাম, সরাসরি উৎস থেকে আপনার টেবিলে\n    </p>\n\n    <p class=\"hero-description\">\n        Sourced from carefully selected farms and harvested at peak quality,\n        our premium almonds deliver natural nutrition, rich flavor, and\n        wholesome goodness for your everyday lifestyle.\n    </p>\n\n    <div class=\"hero-actions\">\n        <a href=\"/collections/almonds\" class=\"btn-primary\">\n            Shop Almonds\n        </a>\n\n        <a href=\"/pages/our-story\" class=\"btn-secondary\">\n            Learn More\n        </a>\n    </div>\n\n</div>"
+        },
+        {
+          "id": "media-1789199118426-0-kiibt",
+          "type": "image",
+          "url": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+          "title": "GoodZeed Energy Nut Mix pouch",
+          "altText": "GoodZeed Energy Nut Mix pouch",
+          "ctaLinkType": "product",
+          "ctaProductSlug": "certified-organic-chia-seeds",
+          "secondaryCtaLinkType": "cms",
+          "secondaryCtaLandingSlug": "energy-nut-mix-40tk",
+          "secondaryCtaText": "Learn More",
+          "ctaText": "shop now",
+          "overlay": "medium",
+          "ctaLandingSlug": "pure-sundarban-honey",
+          "status": "published"
+        },
+        {
+          "id": "hero-seed-2",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1600&q=85",
+          "title": "Cold-Pressed Mustard & Kalijira Oils",
+          "altText": "Wooden Ghani Cold-Pressed Mustard Oil"
+        },
+        {
+          "id": "media-1789202287011-xetxr",
+          "type": "image",
+          "url": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc",
+          "title": "বিশুদ্ধতা, পুষ্টি ও প্রাকৃতিক স্বাদের বিশ্বস্ত ঠিকানা",
+          "altText": "বিশুদ্ধতা, পুষ্টি ও প্রাকৃতিক স্বাদের বিশ্বস্ত ঠিকানা",
+          "status": "published",
+          "overlay": "medium",
+          "advancedHtml": "<!-- Enter custom HTML for this slide --><div class=\"hero-content\">\n\n    <span class=\"hero-badge\">\n        100% Pure & Naturally Sourced\n    </span>\n\n    <h1>\n        Fuel Your Day With Nature's Best\n    </h1>\n\n    <p class=\"hero-subtitle\">\n        বিশুদ্ধতা, পুষ্টি ও প্রাকৃতিক স্বাদের বিশ্বস্ত ঠিকানা\n    </p>\n\n    <p class=\"hero-description\">\n        From premium honey and cold-pressed oils to nutritious seeds,\n        dry fruits, and energy-packed nut mixes, GoodZeed brings\n        nature's goodness to every home.\n    </p>\n\n    <div class=\"hero-actions\">\n        <a href=\"/shop\" class=\"btn-primary\">\n            Shop Premium Products\n        </a>\n\n        <a href=\"/about\" class=\"btn-secondary\">\n            Learn More\n        </a>\n    </div>\n\n</div>"
+        }
+      ],
+      "heroHeadline": "Premium Natural Foods For A Healthier Lifestyle",
+      "heroBengaliTitle": "প্রকৃতির বিশুদ্ধ পুষ্টি, প্রতিদিনের সুস্থ জীবনের জন্য",
+      "heroDescription": "Discover pure honey, nutrient-rich nut mixes, premium seeds, cold-pressed oils, and carefully selected dry fruits. Carefully sourced for freshness, quality, and everyday wellness.",
+      "heroCtaText": "Shop Now",
+      "heroCtaCategorySlug": "all-products",
+      "heroSecondaryCtaText": "Explore Collections",
+      "heroVideoUrl": "/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4"
+    },
+    {
+      "id": "sec-categories",
+      "sectionType": "SHOP_BY_CATEGORY",
+      "title": "Shop By Category",
+      "sortOrder": 2,
+      "isEnabled": true,
+      "heading": "Explore Our Everyday Staples",
+      "bodyText": "Clean, nutrient-dense nutrition for wholesome daily living."
+    },
+    {
+      "id": "sec-trust-strip",
+      "sectionType": "TRUST_STRIP",
+      "title": "Trust & Value Strip",
+      "sortOrder": 3,
+      "isEnabled": true,
+      "heading": "Our Trust Guarantees",
+      "bodyText": "Purity you can test, prices you can trust, delivery you can count on."
+    },
+    {
+      "id": "sec-featured",
+      "sectionType": "FEATURED_PRODUCTS",
+      "title": "Featured Products",
+      "sortOrder": 4,
+      "isEnabled": true,
+      "heading": "Handpicked GoodZeed Essentials",
+      "bodyText": "Our most sought-after pure foods harvested this season."
+    },
+    {
+      "id": "sec-best-sellers",
+      "sectionType": "BEST_SELLERS",
+      "title": "Best Sellers",
+      "sortOrder": 5,
+      "isEnabled": true,
+      "heading": "Top Rated by Bangladeshi Households",
+      "bodyText": "Verified customer favorites delivered straight to dinner tables."
+    },
+    {
+      "id": "sec-reviews",
+      "sectionType": "REVIEWS",
+      "title": "Customer Reviews",
+      "sortOrder": 9,
+      "isEnabled": true,
+      "heading": "What Our Customers Say",
+      "bodyText": "Honest reviews from verified buyers across Dhaka and all 64 districts."
+    },
+    {
+      "id": "sec-final-cta",
+      "sectionType": "FINAL_CTA",
+      "title": "Final Call to Action",
+      "sortOrder": 10,
+      "isEnabled": true,
+      "heading": "Ready to Experience Real, Pure Food?",
+      "bodyText": "Place your order in under 2 minutes with zero account signup required. Cash on delivery and mobile banking accepted.",
+      "ctaLabel": "Browse All Products",
+      "ctaLink": "/shop"
+    },
+    {
+      "id": "sec-promo-banner",
+      "sectionType": "PROMO_BANNER",
+      "title": "Promotional Campaign Banner",
+      "sortOrder": 6,
+      "isEnabled": true,
+      "heading": "এনার্জি নাট মিক্স — মাত্র ৳40! প্রতিদিনের সেরা নাস্তা",
+      "bodyText": "Dry-roasted almonds, cashews & seeds. No added oil, no preservatives. Office tiffin, school snacks, gym fuel — order with Cash on Delivery.",
+      "ctaLabel": "অর্ডার করুন — View Campaign & Buy",
+      "ctaLink": "/landing/energy-nut-mix-40tk",
+      "mediaUrl": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+    },
+    {
+      "id": "sec-why-goodzeed",
+      "sectionType": "WHY_GOODZEED",
+      "title": "Why GoodZeed",
+      "sortOrder": 7,
+      "isEnabled": false,
+      "heading": "Why Families Across Bangladesh Trust GoodZeed",
+      "bodyText": "In a market flooded with adulterated oils and sugar syrup honey, GoodZeed stands as an unyielding standard of purity and transparent sourcing."
+    },
+    {
+      "id": "sec-source-story",
+      "sectionType": "SOURCE_STORY",
+      "title": "Farm-to-Consumer / Source Story",
+      "sortOrder": 8,
+      "isEnabled": false,
+      "heading": "From Mangroves & Traditional Ghanis Directly to Your Door",
+      "bodyText": "We cut out middlemen and adulteration risks by working directly with generational honey harvesters (Mouals) and cold-press artisans.",
+      "mediaUrl": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "landingPages": [
+    {
+      "slug": "campaign-06308",
+      "title": "New Campaign Page",
+      "seoTitle": "Campaign | GoodZeed",
+      "seoDescription": "",
+      "isPublished": false,
+      "isNoIndex": false,
+      "blocks": [],
+      "id": "lp-1789142706309",
+      "createdAt": "2026-09-11T16:05:06.309Z"
+    },
+    {
+      "id": "lp-energy-nut-mix",
+      "slug": "energy-nut-mix-40tk",
+      "title": "GoodZeed এনার্জি নাট মিক্স — প্রতিদিনের সেরা নাস্তা",
+      "seoTitle": "Energy Nut Mix 40g মাত্র ৳40 — প্রতিদিনের সেরা নাস্তা | GoodZeed",
+      "seoDescription": "GoodZeed এনার্জি নাট মিক্স 40g — কাজু, কাঠবাদাম, চিনাবাদাম ও সূর্যমুখী বীজের ড্রাই-রোস্টেড পাওয়ার প্যাক। মাত্র ৳40। Cash on Delivery সারা বাংলাদেশে। Energize Your Day, Pure Goodness!",
+      "socialShareImage": "/uploads/energy-nut-mix-hero-bangla.jpeg",
+      "isPublished": true,
+      "isNoIndex": false,
+      "publishedAt": "2026-09-11T05:52:13.190Z",
+      "createdAt": "2026-09-11T00:00:00.000Z",
+      "countdownEndsAt": "2026-09-18T05:47:30.682Z",
+      "blocks": [
+        {
+          "id": "enm-hero",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "HERO",
+          "sortOrder": 1,
+          "content": {
+            "badge": "মাত্র ৳40 • 40g Power Sachet",
+            "heading": "GoodZeed এনার্জি নাট মিক্স — প্রতিদিনের সেরা নাস্তা, আপনার সুস্থতার চাবিকাঠি",
+            "subheading": "Energize Your Day! Pure Goodness. Dry-roasted almonds, cashews, peanuts & sunflower seeds — no added oil, no preservatives. অফিস টিফিন, স্কুল স্ন্যাকস, জিম, ভ্রমণ বা ইফতারের জন্য পারফেক্ট 40g এনার্জি প্যাক।",
+            "ctaText": "এখনই অর্ডার করুন — Cash on Delivery",
+            "imageUrl": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+          }
+        },
+        {
+          "id": "enm-countdown",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "COUNTDOWN_TIMER",
+          "sortOrder": 2,
+          "content": {
+            "heading": "লঞ্চ অফার শেষ হতে বাকি:",
+            "subtext": "Combo deal: 5টি স্যাশে একসাথে কিনলে ডেলিভারি চার্জে ছাড়! স্টক সীমিত — 200 প্যাক রেডি।",
+            "endsAt": "2026-09-18T05:47:30.682Z"
+          }
+        },
+        {
+          "id": "enm-benefits",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "BENEFITS",
+          "sortOrder": 3,
+          "content": {
+            "heading": "তাজা। প্রাকৃতিক। পুষ্টিকর। — কেন এনার্জি নাট মিক্স?",
+            "items": [
+              {
+                "title": "High Protein (~7.2g / 40g)",
+                "desc": "বাদাম ও বীজের প্রাকৃতিক প্রোটিন — পেশি, মনোযোগ ও দীর্ঘক্ষণ পেট ভরা রাখে।"
+              },
+              {
+                "title": "Instant Natural Energy (~228 kcal)",
+                "desc": "Healthy fats + fiber — চিনির ক্র্যাশ ছাড়াই অফিস, ক্লাস বা ওয়ার্কআউটে টেকসই এনার্জি।"
+              },
+              {
+                "title": "Dry-Roasted, No Added Oil",
+                "desc": "তেলে ভাজা নয়। কোনো কৃত্রিম লবণ, চিনির কোটিং বা প্রিজারভেটিভ নেই।"
+              },
+              {
+                "title": "মাত্র ৳40 — Pocket Friendly",
+                "desc": "প্রতিদিনের পুষ্টি এখন হাতের নাগালে। স্কুল টিফিন থেকে ট্রাভেল স্ন্যাকস — সবার জন্য।"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enm-gallery",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "CUSTOM_HTML",
+          "sortOrder": 4,
+          "content": {
+            "rawHtml": "<div class=\"custom-block\"></div>"
+          },
+          "sanitizedHtml": "<div class=\"max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4\"><figure class=\"rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-white\"><img src=\"/uploads/energy-nut-mix-lifestyle.jpeg\" alt=\"Energy Nut Mix lifestyle - cashews, almonds, pistachios with green tea\" loading=\"lazy\" class=\"w-full h-72 sm:h-80 object-cover\" /><figcaption class=\"px-4 py-3 text-xs text-neutral-600\">Office desk to gym bag — <b>Energize Your Day! Pure Goodness.</b> 40g crunchy mix, MRP 40tk.</figcaption></figure><figure class=\"rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-white\"><img src=\"/uploads/energy-nut-mix-trio-pack.jpeg\" alt=\"Energy Nut Mix trio packs with sunflower seeds\" loading=\"lazy\" class=\"w-full h-72 sm:h-80 object-cover\" /><figcaption class=\"px-4 py-3 text-xs text-neutral-600\">Family combo — 3 sachets = 3 days clean snacking. <b>Cash on Delivery</b> available nationwide.</figcaption></figure></div>"
+        },
+        {
+          "id": "enm-purchase",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "PURCHASE_SECTION",
+          "sortOrder": 5,
+          "content": {
+            "productId": "prod-energy-nut-mix-40g",
+            "heading": "আপনার প্যাক সিলেক্ট করুন — ৳40/স্যাশে",
+            "subheading": "No account needed. Cash on Delivery / bKash / Nagad — সারা বাংলাদেশে ডেলিভারি।"
+          }
+        },
+        {
+          "id": "enm-reviews",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "TESTIMONIALS",
+          "sortOrder": 6,
+          "content": {
+            "heading": "কাস্টমাররা যা বলছেন",
+            "items": [
+              {
+                "name": "Tanvir Hasan",
+                "rating": 5,
+                "text": "অফিসে বিকেলের ক্ষুধায় বেস্ট স্ন্যাক। তেলে ভাজা চিপসের বদলে এখন এটাই খাই। 40 টাকায় এত ভালো মিক্স আশা করিনি!",
+                "location": "Dhaka"
+              },
+              {
+                "name": "Nusrat Jahan",
+                "rating": 5,
+                "text": "বাচ্চার স্কুল টিফিনে দিই। কাজু-কাঠবাদাম ফ্রেশ আর ক্রাঞ্চি। প্যাকেজিংও সুন্দর, সিল ভালো ছিল।",
+                "location": "Chattogram"
+              },
+              {
+                "name": "Arif Chowdhury",
+                "rating": 4,
+                "text": "জিমের আগে খাই — হালকা কিন্তু এনার্জি দেয়। 5টা একসাথে অর্ডার করেছিলাম, ডেলিভারি 2 দিনে পেয়েছি।",
+                "location": "Sylhet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enm-faq",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "FAQ",
+          "sortOrder": 7,
+          "content": {
+            "heading": "সাধারণ প্রশ্ন (FAQ)",
+            "faqs": [
+              {
+                "q": "40g প্যাকে কী কী আছে?",
+                "a": "কাঠবাদাম (almonds), কাজু (cashews), চিনাবাদাম (peanuts), সূর্যমুখী ও মিষ্টি কুমড়ার বীজ — ড্রাই-রোস্টেড, কোনো অতিরিক্ত তেল ছাড়া।"
+              },
+              {
+                "q": "এটা কি বাচ্চাদের জন্য নিরাপদ?",
+                "a": "হ্যাঁ, তবে ছোট বাচ্চাদের (5 বছরের নিচে) বাদাম চিবোতে সমস্যা হতে পারে — গুঁড়ো করে দুধের সাথে দিতে পারেন। বাদামে অ্যালার্জি থাকলে এড়িয়ে চলুন।"
+              },
+              {
+                "q": "ডেলিভারি চার্জ ও সময় কত?",
+                "a": "ঢাকার ভিতরে ৳70 (24-48 ঘণ্টা), ঢাকার বাইরে ৳130 (2-4 কর্মদিবস)। Cash on Delivery-তে পণ্য হাতে পেয়ে মূল্য পরিশোধ করবেন।"
+              },
+              {
+                "q": "বেশি কোয়ান্টিটি / কর্পোরেট গিফট চাইলে?",
+                "a": "অফিস ইভেন্ট বা বাল্ক অর্ডারের জন্য 10+ প্যাকে বিশেষ ছাড় আছে। অর্ডার নোটে লিখুন বা care@goodzeed.com.bd-তে মেইল করুন।"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enm-quickorder",
+          "landingPageId": "lp-energy-nut-mix",
+          "blockType": "QUICK_ORDER_FORM",
+          "sortOrder": 8,
+          "content": {
+            "heading": "ফর্ম পূরণ করুন — ১ মিনিটে অর্ডার (COD)",
+            "productId": "prod-energy-nut-mix-40g",
+            "ctaText": "অর্ডার কনফার্ম করুন (Cash on Delivery)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lp-sundarban-honey",
+      "slug": "pure-sundarban-honey",
+      "title": "Authentic Raw Sundarban Honey Campaign",
+      "seoTitle": "Buy 100% Pure Raw Sundarban Honey in Bangladesh | GoodZeed",
+      "seoDescription": "Direct from traditional Mouals of Satkhira Sundarban. Unheated, raw, and lab tested. Fast home delivery with Cash on Delivery.",
+      "isPublished": true,
+      "isNoIndex": false,
+      "publishedAt": "2026-09-01T00:00:00.000Z",
+      "createdAt": "2026-09-01T00:00:00.000Z",
+      "blocks": [
+        {
+          "id": "block-1",
+          "landingPageId": "lp-sundarban-honey",
+          "blockType": "HERO",
+          "sortOrder": 1,
+          "content": {
+            "badge": "Limited Harvest 2026",
+            "heading": "Experience the Untamed Purity of Wild Sundarban Honey",
+            "subheading": "Harvested from deep mangrove blossoms by generational Mouals. Never heated, never diluted, 100% raw.",
+            "ctaText": "Order Fresh Jar Now",
+            "imageUrl": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=80"
+          }
+        },
+        {
+          "id": "block-2",
+          "landingPageId": "lp-sundarban-honey",
+          "blockType": "BENEFITS",
+          "sortOrder": 2,
+          "content": {
+            "heading": "Why Wild Sundarban Honey is Superior",
+            "items": [
+              {
+                "title": "Zero Artificial Heat Processing",
+                "desc": "Retains all live enzymes, phytonutrients, and natural pollen grains."
+              },
+              {
+                "title": "Rich in Propolis & Antioxidants",
+                "desc": "Natural defense booster known for seasonal immunity and digestive soothing."
+              },
+              {
+                "title": "100% Traceable Origin",
+                "desc": "Directly sourced from licensed Moual cooperatives in Satkhira range."
+              },
+              {
+                "title": "Independent Lab Certified",
+                "desc": "Passed strict C4 sugar adulteration and HMF purity parameters."
+              }
+            ]
+          }
+        },
+        {
+          "id": "block-3",
+          "landingPageId": "lp-sundarban-honey",
+          "blockType": "PURCHASE_SECTION",
+          "sortOrder": 3,
+          "content": {
+            "productId": "prod-sundarban-honey",
+            "heading": "Order Your Jar Today with Cash on Delivery",
+            "subheading": "Select your preferred size below. No account needed."
+          }
+        },
+        {
+          "id": "block-4",
+          "landingPageId": "lp-sundarban-honey",
+          "blockType": "FAQ",
+          "sortOrder": 4,
+          "content": {
+            "heading": "Frequently Asked Questions",
+            "faqs": [
+              {
+                "q": "Is this real wild honey or bee-farm honey?",
+                "a": "This is 100% wild multifloral mangrove honey collected from natural combs inside the Sundarban forest, not cultured commercial honey."
+              },
+              {
+                "q": "Why is raw honey sometimes crystallized or cloudy?",
+                "a": "Natural raw honey contains pure bee pollen and floral nectar enzymes. Crystallization at cooler temperatures is universal proof that honey has not been boiled or adulterated with corn syrup."
+              },
+              {
+                "q": "Can I check before paying?",
+                "a": "Yes! You can choose Cash on Delivery and check the sealed packaging upon receiving."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "productId": "prod-sundarban-honey",
+      "productName": "Raw Sundarban Khalsi Honey",
+      "reviewerName": "Tanzina Akhter",
+      "reviewerPhone": "01711998877",
+      "rating": 5,
+      "reviewText": "সুন্দরবনের খাঁটি মধু খুঁজে পাওয়া এখন খুব কঠিন। কিন্তু গুডজিডের এই খলসী মধুটা পাওয়ার পর মুখে দিয়েই আসল বুনো ফুলের ঘ্রাণ পেয়েছি। কোনো বাড়তি চিনির আস্তরণ নেই। প্যাকেজিং অত্যন্ত সুরক্ষিত ছিল।",
+      "isVerifiedPurchase": true,
+      "moderationStatus": "APPROVED",
+      "createdAt": "2026-08-25T11:20:00.000Z"
+    },
+    {
+      "id": "rev-2",
+      "productId": "prod-mustard-oil",
+      "productName": "Cold-Pressed Extra Virgin Mustard Oil",
+      "reviewerName": "Shahriar Kabir",
+      "reviewerPhone": "01912345678",
+      "rating": 5,
+      "reviewText": "অসাধারণ ঝাঁঝ এবং নিখুঁত ঘানি ভাঙা ঘ্রাণ। ভর্তা আর ইলিশ মাছে এই তেলের তুলনা নেই। বোতল খোলার সাথেই পুরো রান্নাঘর সরিষার খাঁটি সুবাসে ভরে যায়।",
+      "isVerifiedPurchase": true,
+      "moderationStatus": "APPROVED",
+      "createdAt": "2026-08-28T14:40:00.000Z"
+    },
+    {
+      "id": "rev-3",
+      "productId": "prod-organic-chia-seeds",
+      "productName": "Certified Organic Chia Seeds",
+      "reviewerName": "Dr. Nazmul Huda",
+      "reviewerPhone": "01671239876",
+      "rating": 5,
+      "reviewText": "Clean and free of dust or sand. Swells very well in water within 15 minutes. High fiber quality, ordering my 3rd jar today.",
+      "isVerifiedPurchase": true,
+      "moderationStatus": "APPROVED",
+      "createdAt": "2026-09-02T08:15:00.000Z"
+    },
+    {
+      "id": "rev-4",
+      "productId": "prod-california-almonds",
+      "productName": "Premium California Almonds",
+      "reviewerName": "Ayesha Siddiqua",
+      "reviewerPhone": "01812993311",
+      "rating": 4,
+      "reviewText": "Fresh and crunchy almonds. Highly recommended for daily morning health routine.",
+      "isVerifiedPurchase": false,
+      "moderationStatus": "APPROVED",
+      "createdAt": "2026-09-08T09:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2026-09-14T03:18:17.068Z",
+  "supportTickets": [
+    {
+      "customerName": "Sabbir",
+      "customerPhone": "01879844168",
+      "subject": "General Question",
+      "message": "Can i get spacial offer",
+      "id": "ticket-1789312022985-yebmd",
+      "status": "RESOLVED",
+      "createdAt": "2026-09-13T15:07:02.985Z",
+      "updatedAt": "2026-09-13T15:09:33.467Z",
+      "adminNotes": "yes you can"
+    }
+  ]
+}
