@@ -189,13 +189,16 @@ function checkRateLimit(ip) {
   return true;
 }
 
-// Clean up rate limit map every 5 minutes to prevent memory leaks
-setInterval(() => {
+// Clean up rate limit map every 5 minutes to prevent memory leaks (unref so it does not block Node event loop)
+const rateLimitCleanupTimer = setInterval(() => {
   const now = Date.now();
   for (const [ip, entry] of aiRateLimitMap.entries()) {
     if (now - entry.windowStart > AI_RATE_WINDOW_MS * 2) aiRateLimitMap.delete(ip);
   }
 }, 5 * 60 * 1000);
+if (rateLimitCleanupTimer.unref) {
+  rateLimitCleanupTimer.unref();
+}
 
 /**
  * Safely reads store.json and returns parsed object (or {} on error).
