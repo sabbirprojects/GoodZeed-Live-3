@@ -167,6 +167,7 @@ export const AdminCategories: React.FC = () => {
                 <MediaUploadInput
                   label="Category Image"
                   value={editingCategory.image || ''}
+                  folder="categories"
                   onChange={(url) => setEditingCategory({ ...editingCategory, image: url })}
                 />
               </div>

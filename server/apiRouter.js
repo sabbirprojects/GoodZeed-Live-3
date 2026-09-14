@@ -3,8 +3,15 @@ import path from 'path';
 import fs from 'fs';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
+import { createClient } from '@supabase/supabase-js';
 
 const router = express.Router();
+
+// Optional Supabase client for server-side operations
+const supabaseUrl = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+const isSbConfigured = Boolean(supabaseUrl && supabaseKey && !supabaseUrl.includes('YOUR_SUPABASE_URL'));
+const supabase = isSbConfigured ? createClient(supabaseUrl, supabaseKey) : null;
 
 // Ensure public/uploads directory exists
 const publicDir = path.resolve(process.cwd(), 'public');
@@ -342,36 +349,80 @@ router.post('/support/ai', async (req, res) => {
     let orderContext = null;
     if (storeContext?.orderLookup?.phone && storeContext?.orderLookup?.orderNumber) {
       const { phone, orderNumber } = storeContext.orderLookup;
-      const orders = storeData.orders || [];
       const cleanNum = String(orderNumber).trim().toUpperCase();
       const normPhone = String(phone).replace(/[^0-9]/g, '').slice(-10);
-      const match = orders.find(o => {
-        const oNum = String(o.orderNumber || '').toUpperCase();
-        const oPhone = String(o.customerPhoneSnapshot || '').replace(/[^0-9]/g, '').slice(-10);
-        return (oNum === cleanNum || oNum.endsWith(cleanNum)) && oPhone === normPhone;
-      });
-      if (match) {
-        // Only expose safe, non-sensitive order fields
-        orderContext = {
-          orderNumber: match.orderNumber,
-          status: match.status,
-          createdAt: match.createdAt,
-          deliveryDistrict: match.deliveryDistrict,
-          delivery: match.delivery ? {
-            status: match.delivery.status,
-            estimatedDelivery: match.delivery.estimatedDelivery
-          } : null,
-          payment: match.payment ? {
-            method: match.payment.method,
-            status: match.payment.status
-          } : null,
-          items: (match.items || []).map(i => ({
-            productNameSnapshot: i.productNameSnapshot,
-            variantLabelSnapshot: i.variantLabelSnapshot,
-            quantity: i.quantity
-          })),
-          total: match.total
-        };
+
+      // 1. Try querying Supabase orders_view if available
+      if (supabase) {
+        try {
+          const { data: sbOrders } = await supabase
+            .from('orders_view')
+            .select('*')
+            .eq('orderNumber', cleanNum)
+            .limit(1);
+
+          if (sbOrders && sbOrders.length > 0) {
+            const match = sbOrders[0];
+            const oPhone = String(match.customerPhoneSnapshot || '').replace(/[^0-9]/g, '').slice(-10);
+            if (oPhone === normPhone) {
+              orderContext = {
+                orderNumber: match.orderNumber,
+                status: match.status,
+                createdAt: match.createdAt,
+                deliveryDistrict: match.deliveryDistrict,
+                delivery: match.delivery ? {
+                  status: match.delivery.status,
+                  estimatedDelivery: match.delivery.estimatedDelivery
+                } : null,
+                payment: match.payment ? {
+                  method: match.payment.method,
+                  status: match.payment.status
+                } : null,
+                items: (match.items || []).map(i => ({
+                  productNameSnapshot: i.productNameSnapshot,
+                  variantLabelSnapshot: i.variantLabelSnapshot,
+                  quantity: i.quantity
+                })),
+                total: match.total
+              };
+            }
+          }
+        } catch (sbErr) {
+          console.warn('[API/AI] Supabase order lookup error, falling back to local:', sbErr);
+        }
+      }
+
+      // 2. Fallback to local storeData if not found in Supabase
+      if (!orderContext) {
+        const orders = storeData.orders || [];
+        const match = orders.find(o => {
+          const oNum = String(o.orderNumber || '').toUpperCase();
+          const oPhone = String(o.customerPhoneSnapshot || '').replace(/[^0-9]/g, '').slice(-10);
+          return (oNum === cleanNum || oNum.endsWith(cleanNum)) && oPhone === normPhone;
+        });
+        if (match) {
+          // Only expose safe, non-sensitive order fields
+          orderContext = {
+            orderNumber: match.orderNumber,
+            status: match.status,
+            createdAt: match.createdAt,
+            deliveryDistrict: match.deliveryDistrict,
+            delivery: match.delivery ? {
+              status: match.delivery.status,
+              estimatedDelivery: match.delivery.estimatedDelivery
+            } : null,
+            payment: match.payment ? {
+              method: match.payment.method,
+              status: match.payment.status
+            } : null,
+            items: (match.items || []).map(i => ({
+              productNameSnapshot: i.productNameSnapshot,
+              variantLabelSnapshot: i.variantLabelSnapshot,
+              quantity: i.quantity
+            })),
+            total: match.total
+          };
+        }
       }
     }
 

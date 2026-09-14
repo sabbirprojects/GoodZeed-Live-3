@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { HeroMediaItem, HeroMediaType, HeroCtaLinkType } from '../../types';
 import { detectMediaType, parseVideoUrl, validateCtaUrl } from '../../utils/mediaUtils';
+import { uploadMedia } from '../../services/storageService';
 import {
   Upload,
   Link,
@@ -338,18 +339,14 @@ export const HeroMediaManager: React.FC<HeroMediaManagerProps> = ({
       if (file.size > maxSize) { errors.push(`"${file.name}" exceeds the ${isVid ? '35MB' : '10MB'} limit.`); continue; }
       let url: string | null = null;
       try {
-        const formData = new FormData();
-        formData.append('file', file);
-        const resp = await fetch('/api/upload', { method: 'POST', body: formData });
-        if (resp.ok) {
-          const json = await resp.json();
-          if (json && json.url) url = json.url;
-          else errors.push(`"${file.name}": upload rejected by server.`);
+        const res = await uploadMedia(file, 'hero');
+        if (res.success && res.url) {
+          url = res.url;
         } else {
-          errors.push(`"${file.name}": upload failed (server ${resp.status}).`);
+          errors.push(`"${file.name}": ${res.error || 'upload failed'}`);
         }
-      } catch {
-        errors.push(`"${file.name}": could not reach upload server.`);
+      } catch (err: any) {
+        errors.push(`"${file.name}": ${err?.message || 'could not complete Supabase Storage upload.'}`);
       }
       if (!url) continue;
       newItems.push({
@@ -402,6 +399,7 @@ export const HeroMediaManager: React.FC<HeroMediaManagerProps> = ({
   const handleRemove = (id: string) => {
     onChange(mediaList.filter(item => item.id !== id));
     if (expandedId === id) setExpandedId(null);
+    notifySuccess('Slide removed. Click "Save Hero Settings" below to persist changes.');
   };
 
   const handleDuplicate = (id: string, idx: number) => {

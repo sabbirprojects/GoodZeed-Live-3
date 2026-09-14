@@ -10,10 +10,10 @@ export const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    const success = loginAdmin(username, password);
+    const success = await loginAdmin(username, password);
     if (!success) {
       setError('Invalid operator credentials. Please check your username and password.');
       setPassword('');

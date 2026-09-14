@@ -43,6 +43,20 @@ import {
   generateInvoiceNumber
 } from '../utils/formatters';
 import { sanitizeHtml } from '../utils/sanitizer';
+import { isSupabaseConfigured } from '../lib/supabase/client';
+import {
+  loginAdmin as authLoginAdmin,
+  logoutAdmin as authLogoutAdmin,
+  getAdminSession,
+  saveAdminSession,
+  ensureAdminSupabaseAuth,
+  ADMIN_CREDENTIALS as AUTH_ADMIN_CREDENTIALS
+} from '../services/authService';
+import * as catalogService from '../services/catalogService';
+import * as orderService from '../services/orderService';
+import * as cmsService from '../services/cmsService';
+import * as settingsService from '../services/settingsService';
+import * as supportService from '../services/supportService';
 
 export interface ToastMessage {
   id: string;
@@ -79,8 +93,8 @@ interface StoreContextType {
   updateSettings: (newSettings: Partial<StoreSettings>) => void;
   adminUser: AdminUser | null;
   isAdminLoggedIn: boolean;
-  loginAdmin: (email: string, pass: string) => boolean;
-  logoutAdmin: () => void;
+  loginAdmin: (email: string, pass: string) => Promise<boolean> | boolean;
+  logoutAdmin: () => Promise<void> | void;
 
   // Catalog
   categories: Category[];
@@ -150,7 +164,7 @@ interface StoreContextType {
   // Homepage CMS
   homepageSections: HomepageSection[];
   addHomepageSection: (section: Omit<HomepageSection, 'id'>) => void;
-  updateHomepageSection: (id: string, partial: Partial<HomepageSection>) => void;
+  updateHomepageSection: (id: string, partial: Partial<HomepageSection>) => Promise<boolean>;
   toggleHomepageSection: (id: string) => void;
   deleteHomepageSection: (id: string) => void;
   reorderHomepageSections: (reordered: HomepageSection[]) => void;
@@ -214,36 +228,6 @@ function getInitialStorage<T>(key: string, fallback: T): T {
 }
 
 // ── Admin session helpers (sessionStorage = tab-local, never persisted) ───────
-const ADMIN_SESSION_KEY = 'goodzeed_admin_session';
-const ADMIN_SESSION_DURATION_MS = 8 * 60 * 60 * 1000; // 8 hours
-
-function getAdminSession(): import('../types').AdminUser | null {
-  try {
-    const raw = sessionStorage.getItem(ADMIN_SESSION_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    // Expire check
-    if (parsed.expiresAt && new Date(parsed.expiresAt) < new Date()) {
-      sessionStorage.removeItem(ADMIN_SESSION_KEY);
-      return null;
-    }
-    return parsed;
-  } catch {
-    return null;
-  }
-}
-
-function saveAdminSession(user: import('../types').AdminUser | null): void {
-  try {
-    if (user) {
-      sessionStorage.setItem(ADMIN_SESSION_KEY, JSON.stringify(user));
-    } else {
-      sessionStorage.removeItem(ADMIN_SESSION_KEY);
-    }
-  } catch (err) {
-    console.warn('Error saving admin session to sessionStorage:', err);
-  }
-}
 
 function normalizeOrderRecord(ord: Order): Order {
   return {
@@ -298,7 +282,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (json.length > 4_500_000) {
         console.warn(
           `[StoreContext] Payload ${(json.length / 1024 / 1024).toFixed(2)}MB is too large — ` +
-          `likely base64 data URLs. Upload files via /api/upload so only /uploads/... URLs are stored.`
+          `likely base64 data URLs. Upload files via Supabase Storage so only permanent storage URLs are stored.`
         );
       }
       const resp = await fetch('/api/store', {
@@ -307,12 +291,13 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         body: json
       });
       if (!resp.ok) {
-        if (resp.status !== 404) {
+        if (!isSupabaseConfigured() && resp.status !== 404) {
           const text = await resp.text().catch(() => '');
           console.error('[StoreContext] Backend save failed:', resp.status, text.slice(0, 500));
           showToast(`Save failed (server ${resp.status}). Changes kept locally only.`, 'error');
         }
-        return false;
+        // When Supabase is configured and handling primary persistence, 404 on legacy /api/store is expected and non-fatal
+        return isSupabaseConfigured() ? true : false;
       }
       return true;
     } catch (err) {
@@ -442,6 +427,87 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     let isMounted = true;
     async function loadBackendStore() {
+      // 1. If Supabase is configured, attempt live hydration from Supabase services
+      if (isSupabaseConfigured()) {
+        try {
+          const [
+            sbSettings,
+            sbCategories,
+            sbProducts,
+            sbZones,
+            sbOrders,
+            sbCustomers,
+            sbSections,
+            sbLandingPages,
+            sbReviews,
+            sbTickets
+          ] = await Promise.all([
+            settingsService.fetchStoreSettings(),
+            catalogService.fetchCategories(),
+            catalogService.fetchProducts(),
+            settingsService.fetchDeliveryZones(),
+            orderService.fetchOrders(),
+            orderService.fetchCustomers(),
+            cmsService.fetchHomepageSections(),
+            cmsService.fetchLandingPages(),
+            supportService.fetchReviews(),
+            supportService.fetchSupportTickets()
+          ]);
+
+          if (isMounted) {
+            if (sbSettings) setSettings(prev => ({ ...prev, ...sbSettings }));
+            if (sbCategories && sbCategories.length > 0) {
+              const mappedCats = sbCategories.map(c => ({ ...c, image: c.image ? getAssetUrl(c.image) : c.image }));
+              setCategories(prev => mergeById(mappedCats, prev));
+            }
+            if (sbProducts && sbProducts.length > 0) {
+              const mappedProds = sbProducts.map(p => {
+                const mediaImages = Array.isArray(p.media)
+                  ? p.media.filter(m => m && (!m.type || m.type === 'image') && m.url).map(m => getAssetUrl(m.url))
+                  : [];
+                const resolvedImages = Array.isArray(p.images) && p.images.length > 0
+                  ? p.images.map(getAssetUrl)
+                  : mediaImages;
+                return {
+                  ...p,
+                  images: resolvedImages,
+                  media: Array.isArray(p.media) ? p.media.map(m => ({ ...m, url: getAssetUrl(m.url) })) : undefined
+                };
+              });
+              setProducts(prev => mergeById(mappedProds, prev));
+            }
+            if (sbZones && sbZones.length > 0) setDeliveryZones(prev => mergeById(sbZones, prev));
+            if (sbOrders && sbOrders.length > 0) {
+              const normOrders = sbOrders.map(normalizeOrderRecord);
+              setOrders(prev => mergeById(normOrders, prev.map(normalizeOrderRecord)).sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+            }
+            if (sbCustomers && sbCustomers.length > 0) setCustomers(prev => mergeById(sbCustomers, prev));
+            if (sbSections && sbSections.length > 0) {
+              const mappedSecs = sbSections.map(s => ({
+                ...s,
+                mediaUrl: s.mediaUrl ? getAssetUrl(s.mediaUrl) : s.mediaUrl,
+                heroMedia: Array.isArray(s.heroMedia) ? s.heroMedia.map(m => ({ ...m, url: getAssetUrl(m.url) })) : s.heroMedia
+              }));
+              setHomepageSections(prev => mergeById(mappedSecs, prev));
+            }
+            if (sbLandingPages && sbLandingPages.length > 0) {
+              const mappedLps = sbLandingPages.map(lp => ({
+                ...lp,
+                socialShareImage: lp.socialShareImage ? getAssetUrl(lp.socialShareImage) : lp.socialShareImage
+              }));
+              setLandingPages(prev => mergeById(mappedLps, prev));
+            }
+            if (sbReviews && sbReviews.length > 0) setReviews(prev => mergeById(sbReviews, prev));
+            if (sbTickets && sbTickets.length > 0) setSupportTickets(prev => mergeById(sbTickets, prev));
+            isInitialBackendSyncRef.current = true;
+            return;
+          }
+        } catch (sbErr) {
+          console.warn('[StoreContext] Supabase hydration fallback:', sbErr);
+        }
+      }
+
+      // 2. Fallback to /api/store and bundled STORE_DATA
       let data: any = null;
       try {
         const resp = await fetch('/api/store');
@@ -452,7 +518,6 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         // Expected when running on static hosts like Netlify or preview without node server
       }
 
-      // If backend is active and responded, use backend data; otherwise use bundled STORE_DATA
       const effectiveData = (data && typeof data === 'object' && Object.keys(data).length > 0)
         ? data
         : STORE_DATA;
@@ -473,11 +538,19 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
           if (Array.isArray(effectiveData.products) && effectiveData.products.length > 0) {
             setProducts((prev) => {
-              const mappedProducts = (effectiveData.products as Product[]).map((p: Product) => ({
-                ...p,
-                images: Array.isArray(p.images) ? p.images.map(getAssetUrl) : [],
-                media: Array.isArray(p.media) ? p.media.map(m => ({ ...m, url: getAssetUrl(m.url) })) : undefined
-              }));
+              const mappedProducts = (effectiveData.products as Product[]).map((p: Product) => {
+                const mediaImages = Array.isArray(p.media)
+                  ? p.media.filter(m => m && (!m.type || m.type === 'image') && m.url).map(m => getAssetUrl(m.url))
+                  : [];
+                const resolvedImages = Array.isArray(p.images) && p.images.length > 0
+                  ? p.images.map(getAssetUrl)
+                  : mediaImages;
+                return {
+                  ...p,
+                  images: resolvedImages,
+                  media: Array.isArray(p.media) ? p.media.map(m => ({ ...m, url: getAssetUrl(m.url) })) : undefined
+                };
+              });
               const backendById = new Map<string, Product>(mappedProducts.map((p: Product) => [p.id, p]));
               const localById = new Map<string, Product>(prev.map((p: Product) => [p.id, p]));
 
@@ -725,35 +798,28 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, [settings.faviconPath]);
 
+  // Synchronize admin Supabase Auth session whenever an admin session is present
+  useEffect(() => {
+    if (adminUser) {
+      ensureAdminSupabaseAuth();
+    }
+  }, [adminUser]);
+
   // Admin Auth Methods
-  const loginAdmin = (email: string, pass: string): boolean => {
-    const cleanEmail = email.trim().toLowerCase();
-    const cleanPass = pass.trim();
-
-    const isMatch =
-      cleanEmail === ADMIN_CREDENTIALS.username && cleanPass === ADMIN_CREDENTIALS.password;
-
-    if (isMatch) {
-      const sessionToken = crypto.randomUUID();
-      const expiresAt = new Date(Date.now() + ADMIN_SESSION_DURATION_MS).toISOString();
-      const user: AdminUser = {
-        ...INITIAL_ADMIN,
-        lastLoginAt: new Date().toISOString(),
-        sessionToken,
-        expiresAt
-      };
-      setAdminUser(user);
-      saveAdminSession(user);
-      showToast('Logged in as Super Admin', 'success');
+  const loginAdmin = async (email: string, pass: string): Promise<boolean> => {
+    const res = await authLoginAdmin(email, pass);
+    if (res.success && res.user) {
+      setAdminUser(res.user);
+      showToast(`Logged in as ${res.user.role || 'Admin'}`, 'success');
       return true;
     }
-    showToast('Invalid email or password', 'error');
+    showToast(res.error || 'Invalid email or password', 'error');
     return false;
   };
 
-  const logoutAdmin = () => {
+  const logoutAdmin = async () => {
+    await authLogoutAdmin();
     setAdminUser(null);
-    saveAdminSession(null);
     showToast('Logged out of Admin Portal', 'info');
     setCurrentView('home');
   };
@@ -762,6 +828,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = { ...settings, ...newSettings };
     setSettings(updated);
     saveToBackend({ settings: updated });
+    settingsService.saveStoreSettings(newSettings);
     showToast('Store settings updated', 'success');
   };
 
@@ -774,6 +841,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [...categories, newCat];
     setCategories(updated);
     saveToBackend({ categories: updated });
+    catalogService.saveCategory(newCat);
     showToast('Category created', 'success');
   };
 
@@ -781,6 +849,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = categories.map(c => (c.id === id ? { ...c, ...partial } : c));
     setCategories(updated);
     saveToBackend({ categories: updated });
+    const target = updated.find(c => c.id === id);
+    if (target) catalogService.saveCategory(target);
     showToast('Category updated', 'success');
   };
 
@@ -788,11 +858,14 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = categories.map(c => (c.id === id ? { ...c, isEnabled: !c.isEnabled } : c));
     setCategories(updated);
     saveToBackend({ categories: updated });
+    const target = updated.find(c => c.id === id);
+    if (target) catalogService.saveCategory(target);
   };
 
   const reorderCategories = (ordered: Category[]) => {
     setCategories(ordered);
     saveToBackend({ categories: ordered });
+    ordered.forEach(c => catalogService.saveCategory(c));
   };
 
   const deleteCategory = (id: string): { success: boolean; message?: string } => {
@@ -804,6 +877,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = categories.filter(c => c.id !== id);
     setCategories(updated);
     saveToBackend({ categories: updated });
+    catalogService.deleteCategory(id);
     showToast('Category deleted', 'info');
     return { success: true };
   };
@@ -816,14 +890,20 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [newProd, ...products];
     setProducts(updated);
     saveToBackend({ products: updated });
+    catalogService.saveProduct(newProd);
     showToast('Product added successfully', 'success');
   };
 
   const updateProduct = async (id: string, partial: Partial<Product>) => {
     const updated = products.map(p => (p.id === id ? { ...p, ...partial } : p));
     setProducts(updated);
-    const success = await saveToBackend({ products: updated });
-    if (success) {
+    const target = updated.find(p => p.id === id);
+    let sbSuccess = true;
+    if (target) {
+      sbSuccess = await catalogService.saveProduct(target);
+    }
+    const backendSuccess = await saveToBackend({ products: updated });
+    if (sbSuccess || backendSuccess) {
       showToast('Product updated successfully', 'success');
     } else {
       showToast('Failed to save product to server. Changes kept locally.', 'error');
@@ -834,6 +914,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = products.map(p => (p.id === id ? { ...p, isEnabled: !p.isEnabled } : p));
     setProducts(updated);
     saveToBackend({ products: updated });
+    const target = updated.find(p => p.id === id);
+    if (target) catalogService.saveProduct(target);
   };
 
   const deleteProduct = (id: string): { success: boolean; message?: string } => {
@@ -846,6 +928,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = products.filter(p => p.id !== id);
     setProducts(updated);
     saveToBackend({ products: updated });
+    catalogService.deleteProduct(id);
     showToast('Product deleted', 'info');
     return { success: true };
   };
@@ -883,6 +966,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updatedAdjustments = [adjustment, ...inventoryAdjustments];
     setInventoryAdjustments(updatedAdjustments);
     saveToBackend({ products: updatedProducts, inventoryAdjustments: updatedAdjustments });
+    catalogService.adjustStockRPC(variantId, changeAmount, reason);
     showToast(`Stock updated for ${currentVariant.label}: ${newStockVal} units`, 'success');
     return true;
   };
@@ -1141,6 +1225,13 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setBuyNowItem(null);
     }
 
+    // If Supabase is configured, submit atomically to database via RPC
+    if (isSupabaseConfigured()) {
+      orderService.submitCheckoutRPC(payload).catch(err => {
+        console.warn('[StoreContext] Supabase submit_checkout note:', err);
+      });
+    }
+
     setActiveConfirmedOrder(newOrder);
     return { success: true, order: newOrder };
   };
@@ -1211,6 +1302,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
     setOrders(updatedOrders);
     persistOrders(updatedOrders, seq);
+    orderService.transitionOrderStatusRPC(orderId, newStatus);
     showToast(`Order status moved to ${newStatus}`, 'success');
     return true;
   };
@@ -1237,6 +1329,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setOrders(updatedOrders);
     persistOrders(updatedOrders);
+    orderService.updatePaymentRecord(orderId, resolvedDecision, resolvedDecision, notes);
     showToast(`Payment marked as ${resolvedDecision}`, 'success');
     return true;
   };
@@ -1258,6 +1351,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setOrders(updatedOrders);
     persistOrders(updatedOrders);
+    orderService.addInternalNote(orderId, note, adminUser?.name || 'Admin');
     showToast('Note added', 'success');
   };
 
@@ -1295,6 +1389,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setOrders(updatedOrders);
     persistOrders(updatedOrders);
+    orderService.updatePaymentRecord(orderId, status);
     showToast(`Payment status updated to ${status}`, 'success');
     return true;
   };
@@ -1316,6 +1411,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setOrders(updatedOrders);
     persistOrders(updatedOrders);
+    orderService.updateDeliveryRecord(orderId, status, tracking);
     showToast(`Delivery status updated to ${status}`, 'success');
     return true;
   };
@@ -1360,6 +1456,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setOrders(updatedOrders);
     persistOrders(updatedOrders);
+    orderService.incrementInvoiceReprintRPC(orderId);
   };
 
   const updateCustomerAdminNote = (customerId: string, note: string) => {
@@ -1368,6 +1465,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
     setCustomers(updated);
     saveToBackend({ customers: updated });
+    orderService.updateCustomerNote(customerId, note);
     showToast('Customer note saved', 'success');
   };
 
@@ -1397,6 +1495,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [...deliveryZones, newZone];
     setDeliveryZones(updated);
     saveToBackend({ deliveryZones: updated });
+    settingsService.saveDeliveryZone(newZone);
     showToast('Delivery zone added', 'success');
   };
 
@@ -1404,6 +1503,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = deliveryZones.map(z => (z.id === id ? { ...z, ...partial } : z));
     setDeliveryZones(updated);
     saveToBackend({ deliveryZones: updated });
+    const target = updated.find(z => z.id === id);
+    if (target) settingsService.saveDeliveryZone(target);
     showToast('Delivery zone updated', 'success');
   };
 
@@ -1411,6 +1512,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = deliveryZones.map(z => (z.id === id ? { ...z, isEnabled: !z.isEnabled } : z));
     setDeliveryZones(updated);
     saveToBackend({ deliveryZones: updated });
+    const target = updated.find(z => z.id === id);
+    if (target) settingsService.saveDeliveryZone(target);
   };
 
   // Homepage CMS
@@ -1425,35 +1528,45 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [...homepageSections, newSection];
     setHomepageSections(updated);
     saveToBackend({ homepageSections: updated });
+    cmsService.saveHomepageSection(newSection);
     showToast('Homepage section added', 'success');
   };
 
-  const updateHomepageSection = (id: string, partial: Partial<HomepageSection>) => {
+  const updateHomepageSection = async (id: string, partial: Partial<HomepageSection>): Promise<boolean> => {
     const safePartial = partial.customHtml === undefined
       ? partial
       : { ...partial, customHtml: sanitizeHtml(partial.customHtml) };
     const updated = homepageSections.map(s => (s.id === id ? { ...s, ...safePartial } : s));
     setHomepageSections(updated);
     saveToBackend({ homepageSections: updated });
-    showToast('Homepage section updated', 'success');
+    const target = updated.find(s => s.id === id);
+    let success = true;
+    if (target) {
+      success = await cmsService.saveHomepageSection(target);
+    }
+    return success;
   };
 
   const toggleHomepageSection = (id: string) => {
     const updated = homepageSections.map(s => (s.id === id ? { ...s, isEnabled: !s.isEnabled } : s));
     setHomepageSections(updated);
     saveToBackend({ homepageSections: updated });
+    const target = updated.find(s => s.id === id);
+    if (target) cmsService.saveHomepageSection(target);
   };
 
   const deleteHomepageSection = (id: string) => {
     const updated = homepageSections.filter(section => section.id !== id);
     setHomepageSections(updated);
     saveToBackend({ homepageSections: updated });
+    cmsService.deleteHomepageSection(id);
     showToast('Homepage section deleted', 'success');
   };
 
   const reorderHomepageSections = (reordered: HomepageSection[]) => {
     setHomepageSections(reordered);
     saveToBackend({ homepageSections: reordered });
+    reordered.forEach(s => cmsService.saveHomepageSection(s));
     showToast('Sections reordered', 'success');
   };
 
@@ -1467,6 +1580,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [newPage, ...landingPages];
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    cmsService.saveLandingPage(newPage);
     showToast('Landing page created', 'success');
   };
 
@@ -1474,6 +1588,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = landingPages.map(p => (p.id === id ? { ...p, ...partial } : p));
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === id);
+    if (target) cmsService.saveLandingPage(target);
     showToast('Landing page updated', 'success');
   };
 
@@ -1489,12 +1605,15 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === id);
+    if (target) cmsService.saveLandingPage(target);
   };
 
   const deleteLandingPage = (id: string) => {
     const updated = landingPages.filter(p => p.id !== id);
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    cmsService.deleteLandingPage(id);
     showToast('Landing page deleted', 'info');
   };
 
@@ -1515,6 +1634,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === landingPageId);
+    if (target) cmsService.saveLandingPage(target);
     showToast('Block added to landing page', 'success');
   };
 
@@ -1539,6 +1660,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === landingPageId);
+    if (target) cmsService.saveLandingPage(target);
     showToast('Block updated', 'success');
   };
 
@@ -1549,6 +1672,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === landingPageId);
+    if (target) cmsService.saveLandingPage(target);
     showToast('Block removed', 'info');
   };
 
@@ -1559,6 +1684,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
     setLandingPages(updated);
     saveToBackend({ landingPages: updated });
+    const target = updated.find(p => p.id === landingPageId);
+    if (target) cmsService.saveLandingPage(target);
   };
 
   // Reviews
@@ -1596,6 +1723,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [newRev, ...reviews];
     setReviews(updated);
     saveToBackend({ reviews: updated });
+    supportService.submitReview(newRev);
     showToast('Review submitted! It will appear after quick verification.', 'success');
     return true;
   };
@@ -1604,6 +1732,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = reviews.map(r => (r.id === reviewId ? { ...r, moderationStatus: decision } : r));
     setReviews(updated);
     saveToBackend({ reviews: updated });
+    supportService.moderateReview(reviewId, decision);
     showToast(`Review ${decision.toLowerCase()}`, 'success');
   };
 
@@ -1622,6 +1751,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const updated = [newTicket, ...supportTickets];
     setSupportTickets(updated);
     saveToBackend({ supportTickets: updated });
+    supportService.submitSupportTicket(newTicket);
     showToast('Support request submitted! We will get back to you soon.', 'success');
     return newTicket;
   };
@@ -1632,6 +1762,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
     setSupportTickets(updated);
     saveToBackend({ supportTickets: updated });
+    supportService.updateSupportTicketStatus(id, status);
     showToast(`Ticket status updated to ${status.replace('_', ' ')}`, 'success');
   };
 
@@ -1641,6 +1772,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
     setSupportTickets(updated);
     saveToBackend({ supportTickets: updated });
+    supportService.updateSupportTicketNotes(id, notes);
     showToast('Admin notes saved', 'success');
   };
 

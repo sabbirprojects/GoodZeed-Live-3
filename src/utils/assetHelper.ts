@@ -25,6 +25,14 @@ export function getAssetUrl(path: string | undefined | null): string {
   const [cleanUrl] = path.split('?');
   const normalized = cleanUrl.startsWith('/') ? cleanUrl.slice(1) : cleanUrl;
 
+  // If path already starts with src/assets/, check it directly
+  if (normalized.startsWith('src/assets/')) {
+    const fullModulePath = `/${normalized}`;
+    if (assetModules[fullModulePath]) {
+      return assetModules[fullModulePath];
+    }
+  }
+
   // Direct check in /src/assets/
   const directPath = `/src/assets/${normalized}`;
   if (assetModules[directPath]) {

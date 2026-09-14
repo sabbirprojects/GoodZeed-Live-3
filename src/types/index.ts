@@ -452,3 +452,18 @@ export interface AdminUser {
   /** ISO timestamp when this session expires (default 8 hours from login). */
   expiresAt?: string;
 }
+
+export interface CheckoutPayload {
+  customerName: string;
+  customerPhone: string;
+  customerEmail?: string;
+  deliveryDistrict: string;
+  deliveryZoneId: string;
+  deliveryAddress: string;
+  deliveryNotes?: string;
+  paymentMethod: PaymentMethod;
+  transactionId?: string;
+  items: CartItem[];
+  isBuyNow?: boolean;
+}
+

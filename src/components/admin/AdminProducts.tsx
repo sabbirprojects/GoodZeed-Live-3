@@ -102,7 +102,9 @@ export const AdminProducts: React.FC = () => {
         categoryId: editingProduct.categoryId || categories[0]?.id || '',
         shortDescription: editingProduct.shortDescription || '',
         fullDescription: editingProduct.fullDescription || '',
-        images: editingProduct.images && editingProduct.images.length > 0 ? editingProduct.images : ['https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80'],
+        images: editingProduct.media !== undefined
+          ? editingProduct.media.filter(m => m.type === 'image').map(m => m.url)
+          : (editingProduct.images || []),
         media: editingProduct.media || [],
         purityInfo: editingProduct.purityInfo || '',
         originInfo: editingProduct.originInfo || '',
@@ -125,7 +127,9 @@ export const AdminProducts: React.FC = () => {
         categoryId: editingProduct.categoryId || categories[0]?.id || '',
         shortDescription: editingProduct.shortDescription || '',
         fullDescription: editingProduct.fullDescription || '',
-        images: editingProduct.images && editingProduct.images.length > 0 ? editingProduct.images : ['https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80'],
+        images: editingProduct.media !== undefined
+          ? editingProduct.media.filter(m => m.type === 'image').map(m => m.url)
+          : (editingProduct.images || []),
         media: editingProduct.media || [],
         purityInfo: editingProduct.purityInfo || '',
         originInfo: editingProduct.originInfo || '',
@@ -241,9 +245,10 @@ export const AdminProducts: React.FC = () => {
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
                         <img
-                          src={p.images[0]}
+                          src={p.images?.[0] || p.media?.[0]?.url || 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&q=60'}
                           alt={p.name}
                           className="w-11 h-11 rounded-lg object-cover border bg-neutral-100 shrink-0"
+                          onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&q=60'; }}
                         />
                         <div>
                           <div className="font-bold text-sm text-[#2A2A28]">{p.name}</div>
@@ -450,7 +455,7 @@ export const AdminProducts: React.FC = () => {
                 <label className="block text-xs font-bold text-neutral-700 mb-2">Product Images &amp; Video</label>
                 <ProductMediaManager
                   media={
-                    editingProduct.media && editingProduct.media.length > 0
+                    editingProduct.media !== undefined
                       ? editingProduct.media
                       : normalizeProductMedia(editingProduct as Product)
                   }

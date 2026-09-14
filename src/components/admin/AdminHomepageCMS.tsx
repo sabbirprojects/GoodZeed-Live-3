@@ -75,7 +75,7 @@ export const AdminHomepageCMS: React.FC = () => {
               <label>CTA label<input value={editingSection.ctaLabel || ''} onChange={e => setEditingSection({ ...editingSection, ctaLabel: e.target.value })} className="w-full px-3 py-2 border rounded-xl mt-1" /></label>
               <label>CTA link<input value={editingSection.ctaLink || ''} onChange={e => setEditingSection({ ...editingSection, ctaLink: e.target.value })} className="w-full px-3 py-2 border rounded-xl mt-1" /></label>
             </div>
-            <MediaUploadInput label="Section image or media URL" value={editingSection.mediaUrl || ''} onChange={mediaUrl => setEditingSection({ ...editingSection, mediaUrl })} />
+            <MediaUploadInput folder="cms" label="Section image or media URL" value={editingSection.mediaUrl || ''} onChange={mediaUrl => setEditingSection({ ...editingSection, mediaUrl })} />
             <label className="block">Custom HTML (sanitized before storage/rendering)<textarea rows={5} value={editingSection.customHtml || ''} onChange={e => setEditingSection({ ...editingSection, customHtml: e.target.value })} className="w-full px-3 py-2 border rounded-xl mt-1 font-mono" /></label>
             <label className="flex items-center gap-2 font-bold"><input type="checkbox" checked={editingSection.isEnabled} onChange={e => setEditingSection({ ...editingSection, isEnabled: e.target.checked })} /> Visible on storefront</label>
             <div className="flex justify-end gap-2"><button type="button" onClick={() => setEditingSection(null)} className="px-4 py-2 font-bold text-neutral-500">Cancel</button><button type="submit" className="px-5 py-2 bg-[#2F5233] text-white rounded-xl font-bold flex items-center gap-2"><Save className="w-4 h-4" /> Save Section</button></div>

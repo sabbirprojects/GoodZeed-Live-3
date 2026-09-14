@@ -211,17 +211,13 @@ export function getProductThumbnail(product: Product): string {
  * Extracts image URLs (skipping videos), falling back to thumbnailUrl for video items.
  */
 export function syncLegacyImages(media: ProductMediaItem[]): string[] {
-  const urls = media
+  return media
     .filter(m => m && m.url && m.url.trim())
     .map(m => {
       if (m.type === 'image') return m.url;
       return m.thumbnailUrl || m.url; // Use thumbnail for video items
     })
     .filter(Boolean) as string[];
-
-  return urls.length > 0
-    ? urls
-    : ['https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80'];
 }
 
 // ---------------------------------------------------------------------------

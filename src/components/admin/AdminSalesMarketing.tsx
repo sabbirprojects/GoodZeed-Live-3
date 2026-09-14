@@ -87,7 +87,7 @@ const BlockEditor: React.FC<BlockEditorProps> = ({ block, onChange, products }) 
           <div><label className={labelCls}>Headline</label><input className={inputCls} value={c.heading || ''} onChange={e => set({ heading: e.target.value })} placeholder="Main hero headline" /></div>
           <div><label className={labelCls}>Sub-headline</label><textarea className={inputCls} rows={2} value={c.subheading || ''} onChange={e => set({ subheading: e.target.value })} placeholder="Supporting text..." /></div>
           <div><label className={labelCls}>CTA Button Text</label><input className={inputCls} value={c.ctaText || ''} onChange={e => set({ ctaText: e.target.value })} placeholder="Order Now" /></div>
-          <MediaUploadInput label="Hero Image URL" value={c.imageUrl || ''} onChange={url => set({ imageUrl: url })} />
+          <MediaUploadInput folder="campaigns" label="Hero Image URL" value={c.imageUrl || ''} onChange={url => set({ imageUrl: url })} />
         </div>
       );
 
@@ -265,26 +265,30 @@ const HeroBannerTab: React.FC = () => {
     const vid = newList.find(m => m.type === 'video');
     setForm(prev => ({
       ...prev,
-      heroImageUrl: cover?.url || prev.heroImageUrl,
-      heroVideoUrl: vid?.url || prev.heroVideoUrl
+      heroImageUrl: cover?.url || '',
+      heroVideoUrl: vid?.url || ''
     }));
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!heroSection) return;
     const cover = mediaList.find(m => m.type === 'image') || mediaList[0];
     const vid = mediaList.find(m => m.type === 'video');
 
-    updateHomepageSection(heroSection.id, {
+    const ok = await updateHomepageSection(heroSection.id, {
       ...form,
       heroMedia: mediaList,
-      heroImageUrl: cover?.url || form.heroImageUrl,
-      mediaUrl: cover?.url || form.heroImageUrl,
-      heroVideoUrl: vid?.url || form.heroVideoUrl
+      heroImageUrl: cover?.url || '',
+      mediaUrl: cover?.url || '',
+      heroVideoUrl: vid?.url || ''
     });
-    setSaved(true);
-    showToast('Hero Banner CMS & Media Carousel settings saved', 'success');
-    setTimeout(() => setSaved(false), 2500);
+    if (ok) {
+      setSaved(true);
+      showToast('Hero Banner CMS & Media Carousel settings saved', 'success');
+      setTimeout(() => setSaved(false), 2500);
+    } else {
+      showToast('Failed to save Hero settings to server.', 'error');
+    }
   };
 
   if (!heroSection) return (
@@ -695,7 +699,7 @@ const CampaignPagesTab: React.FC = () => {
               <textarea className={inputCls} rows={3} value={selectedPage.seoDescription || ''} onChange={e => setSelectedPage({ ...selectedPage, seoDescription: e.target.value })} placeholder="Short description for Google search results..." />
               <p className="text-neutral-400 mt-1">{(selectedPage.seoDescription || '').length}/160 chars recommended</p>
             </div>
-            <MediaUploadInput label="Social Share Image (OG Image — 1200×630px recommended)" value={selectedPage.socialShareImage || ''} onChange={url => setSelectedPage({ ...selectedPage, socialShareImage: url })} />
+            <MediaUploadInput folder="campaigns" label="Social Share Image (OG Image — 1200×630px recommended)" value={selectedPage.socialShareImage || ''} onChange={url => setSelectedPage({ ...selectedPage, socialShareImage: url })} />
             {selectedPage.socialShareImage && <img src={selectedPage.socialShareImage} alt="OG Preview" className="h-24 rounded-xl border object-cover" />}
             <div className="flex justify-end pt-2 border-t">
               <button onClick={handleSavePageMeta} className="px-5 py-2.5 bg-[#2F5233] text-white rounded-xl font-bold text-xs flex items-center gap-2">

@@ -22,7 +22,7 @@
       "name": "Pure Honey (প্রাকৃতিক মধু)",
       "slug": "pure-honey",
       "description": "Raw, unpasteurized forest and floral honey harvested sustainably from Sundarban and organic farms.",
-      "image": "/uploads/1789093665629-ms0d06-Gemini_Generated_Image_lli9nylli9nylli9.jpeg",
+      "image": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789093665629-ms0d06-Gemini_Generated_Image_lli9nylli9nylli9.jpeg",
       "sortOrder": 1,
       "isEnabled": true
     },
@@ -31,7 +31,7 @@
       "name": "Nuts & Super Seeds (বাদাম ও বীজ)",
       "slug": "nuts-and-seeds",
       "description": "Freshly sorted premium almonds, cashews, walnuts, and organic super seeds packed with nutrients.",
-      "image": "/uploads/1789179986363-cw5k12-Medjool_Premium.jpg",
+      "image": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789179986363-cw5k12-Medjool_Premium.jpg",
       "sortOrder": 2,
       "isEnabled": true
     },
@@ -49,7 +49,7 @@
       "name": "Dry Fruits (ড্রাই ফ্রুটস)",
       "slug": "dry-fruits",
       "description": "Naturally sweet Medjool dates, Turkish figs, and sun-dried raisins with no sulfur or added sugar.",
-      "image": "/uploads/1789180618403-865556-Top_5_Dry_Fruits_to_Supercharge_Fitness___Naturally_Boost_Testosterone.jpg",
+      "image": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789180618403-865556-Top_5_Dry_Fruits_to_Supercharge_Fitness___Naturally_Boost_Testosterone.jpg",
       "sortOrder": 4,
       "isEnabled": true
     },
@@ -58,7 +58,7 @@
       "name": "Pure Spices & Herbs (খাঁটি মশলা)",
       "slug": "pure-spices",
       "description": "Single-origin turmeric, organic black seed, and whole spices directly from verified growers.",
-      "image": "/uploads/1789181196477-tmngal-Gemini_Generated_Image_wwapsowwapsowwap.jpg",
+      "image": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789181196477-tmngal-Gemini_Generated_Image_wwapsowwapsowwap.jpg",
       "sortOrder": 5,
       "isEnabled": true
     }
@@ -151,7 +151,7 @@
       "storageInstructions": "Keep in an airtight jar in a cool, dry area away from direct sunlight.",
       "usageInstructions": "Soak 1 tablespoon in 250ml water for 15-20 minutes. Add to smoothies, yogurt, lemon water, or pudding.",
       "images": [
-        "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
       ],
       "isFeatured": true,
       "isBestSeller": true,
@@ -192,7 +192,7 @@
         {
           "id": "pm-1789189212476-iie9s",
           "type": "image",
-          "url": "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg",
           "altText": "Sunfood Superfoods Chia Seeds - Raw, Organic, Whole - Keto Super-Seed - Great for Weight-Loss"
         }
       ]
@@ -283,7 +283,7 @@
       "storageInstructions": "Store in airtight containers or refrigerate for maximum crunchiness and freshness.",
       "usageInstructions": "Soak 6-8 almonds overnight in water, peel in the morning and eat on an empty stomach.",
       "images": [
-        "/src/assets/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
         "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=800&q=80"
       ],
       "isFeatured": false,
@@ -338,7 +338,7 @@
         {
           "id": "pm-1789189321029-bbrig",
           "type": "image",
-          "url": "/src/assets/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189321024-8k2w4u-244320348532319371.jpg",
           "altText": "244320348532319371"
         },
         {
@@ -362,8 +362,8 @@
       "storageInstructions": "Keep in an airtight box. Best preserved chilled or refrigerated.",
       "usageInstructions": "Enjoy 2-3 dates daily with black seed honey, milk, or stuffed with walnuts.",
       "images": [
-        "/src/assets/uploads/1789189340197-s4057p-dates.jpg",
-        "/src/assets/uploads/1789189350995-4l61lo-Medjool_Premium.jpg"
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189340197-s4057p-dates.jpg",
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189350995-4l61lo-Medjool_Premium.jpg"
       ],
       "isFeatured": true,
       "isBestSeller": false,
@@ -404,13 +404,13 @@
         {
           "id": "pm-1789189340200-qrwxr",
           "type": "image",
-          "url": "/src/assets/uploads/1789189340197-s4057p-dates.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189340197-s4057p-dates.jpg",
           "altText": "dates"
         },
         {
           "id": "pm-1789189350999-tnvxo",
           "type": "image",
-          "url": "/src/assets/uploads/1789189350995-4l61lo-Medjool_Premium.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189350995-4l61lo-Medjool_Premium.jpg",
           "altText": "Medjool Premium"
         }
       ]
@@ -429,8 +429,8 @@
       "storageInstructions": "Store in amber glass bottle in a cool place away from light.",
       "usageInstructions": "Take half a teaspoon daily mixed with a spoon of raw honey, or use topically.",
       "images": [
-        "/src/assets/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
-        "/src/assets/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
       ],
       "isFeatured": true,
       "isBestSeller": true,
@@ -458,13 +458,13 @@
         {
           "id": "pm-1789189369334-wd6j4",
           "type": "image",
-          "url": "/src/assets/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189369331-1mgm1f-Black_Seed_Oil_Glow_Hacks_2026_For_Skin.jpg",
           "altText": "Black Seed Oil Glow Hacks 2026 For Skin"
         },
         {
           "id": "pm-1789189373037-oe3po",
           "type": "image",
-          "url": "/src/assets/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189373034-6b0cfk-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
           "altText": "Black Seed Oil_ Benefits, Side Effects, Recipes, and How to Use It - Bernadette Lance"
         }
       ]
@@ -485,20 +485,20 @@
       "seoTitle": "Energy Nut Mix 40g - ৳40 Healthy Snacks | GoodZeed",
       "seoDescription": "Buy GoodZeed Energy Nut Mix 40g at ৳40. Almonds, cashews & seeds dry-roasted snack. Cash on Delivery all over Bangladesh.",
       "images": [
-        "/src/assets/uploads/energy-nut-mix-trio-pack.jpeg",
-        "/src/assets/uploads/energy-nut-mix-40g.jpeg"
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-trio-pack.jpeg",
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-40g.jpeg"
       ],
       "media": [
         {
           "id": "med-energy-40g-trio",
           "type": "image",
-          "url": "/src/assets/uploads/energy-nut-mix-trio-pack.jpeg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-trio-pack.jpeg",
           "altText": "GoodZeed Energy Nut Mix trio packs with sunflower seeds - MRP 40tk"
         },
         {
           "id": "med-energy-40g-1",
           "type": "image",
-          "url": "/src/assets/uploads/energy-nut-mix-40g.jpeg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-40g.jpeg",
           "altText": "GoodZeed Energy Nut Mix 40g sachet - MRP 40tk"
         }
       ],
@@ -642,7 +642,7 @@
         "Rajshahi honey"
       ],
       "images": [
-        "/src/assets/uploads/1789308219188-k7z9is-3448137210774719.jpg",
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789308219188-k7z9is-3448137210774719.jpg",
         "/src/assets/uploads/1789308182272-5s3v2p-13861748_1280_720_50fps.mp4"
       ],
       "isFeatured": true,
@@ -684,7 +684,7 @@
         {
           "id": "pm-1789308219193-pcrmd",
           "type": "image",
-          "url": "/src/assets/uploads/1789308219188-k7z9is-3448137210774719.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789308219188-k7z9is-3448137210774719.jpg",
           "altText": "3448137210774719"
         },
         {
@@ -853,7 +853,7 @@
         "exotic honey"
       ],
       "images": [
-        "/src/assets/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
+        "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg"
       ],
       "isFeatured": true,
       "isBestSeller": false,
@@ -894,7 +894,7 @@
         {
           "id": "pm-1789308121011-zv0wf",
           "type": "image",
-          "url": "/src/assets/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789308121006-pva0ua-Black_Seed_Oil__Benefits__Side_Effects__Recipes__and_How_to_Use_It_-_Bernadette_Lance.jpg",
           "altText": "Black Seed Oil_ Benefits, Side Effects, Recipes, and How to Use It - Bernadette Lance"
         }
       ]
@@ -973,7 +973,7 @@
           "unitPriceSnapshot": 280,
           "quantity": 1,
           "lineSubtotal": 280,
-          "productImageSnapshot": "/src/assets/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789189212463-852c31-Sunfood_Superfoods_Chia_Seeds_-_Raw__Organic__Whole_-_Keto_Super-Seed_-_Great_for_Weight-Loss.jpg"
         },
         {
           "id": "item-1789355860184-8249",
@@ -1042,7 +1042,7 @@
           "unitPriceSnapshot": 40,
           "quantity": 1,
           "lineSubtotal": 40,
-          "productImageSnapshot": "/uploads/energy-nut-mix-trio-pack.jpeg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-trio-pack.jpeg"
         }
       ]
     },
@@ -1142,7 +1142,7 @@
           "unitPriceSnapshot": 40,
           "quantity": 1,
           "lineSubtotal": 40,
-          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
         }
       ],
       "invoice": {
@@ -1199,7 +1199,7 @@
           "unitPriceSnapshot": 40,
           "quantity": 1,
           "lineSubtotal": 40,
-          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
         }
       ]
     },
@@ -1299,7 +1299,7 @@
           "unitPriceSnapshot": 40,
           "quantity": 5,
           "lineSubtotal": 200,
-          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
         }
       ],
       "invoice": {
@@ -1356,7 +1356,7 @@
           "unitPriceSnapshot": 40,
           "quantity": 1,
           "lineSubtotal": 40,
-          "productImageSnapshot": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+          "productImageSnapshot": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
         }
       ],
       "invoice": {
@@ -1699,13 +1699,13 @@
       "ctaLabel": "Shop Pure Food",
       "ctaLink": "/shop",
       "badge": "Nature's Finest Nutrition",
-      "heroImageUrl": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
-      "mediaUrl": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+      "heroImageUrl": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+      "mediaUrl": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
       "heroMedia": [
         {
           "id": "media-1789202576629-0-4q2pz",
           "type": "video",
-          "url": "/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4",
           "title": "13861748_1280_720_50fps",
           "altText": "13861748_1280_720_50fps",
           "videoSource": "direct",
@@ -1716,7 +1716,7 @@
         {
           "id": "media-1789199118426-0-kiibt",
           "type": "image",
-          "url": "/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
+          "url": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789199118407-dvgxvt-GoodZeed_Energy_Nut_Mix_pouch.png",
           "title": "GoodZeed Energy Nut Mix pouch",
           "altText": "GoodZeed Energy Nut Mix pouch",
           "ctaLinkType": "product",
@@ -1753,7 +1753,7 @@
       "heroCtaText": "Shop Now",
       "heroCtaCategorySlug": "all-products",
       "heroSecondaryCtaText": "Explore Collections",
-      "heroVideoUrl": "/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4"
+      "heroVideoUrl": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/1789202576572-6s7hsa-13861748_1280_720_50fps.mp4"
     },
     {
       "id": "sec-categories",
@@ -1821,7 +1821,7 @@
       "bodyText": "Dry-roasted almonds, cashews & seeds. No added oil, no preservatives. Office tiffin, school snacks, gym fuel — order with Cash on Delivery.",
       "ctaLabel": "অর্ডার করুন — View Campaign & Buy",
       "ctaLink": "/landing/energy-nut-mix-40tk",
-      "mediaUrl": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+      "mediaUrl": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
     },
     {
       "id": "sec-why-goodzeed",
@@ -1861,7 +1861,7 @@
       "title": "GoodZeed এনার্জি নাট মিক্স — প্রতিদিনের সেরা নাস্তা",
       "seoTitle": "Energy Nut Mix 40g মাত্র ৳40 — প্রতিদিনের সেরা নাস্তা | GoodZeed",
       "seoDescription": "GoodZeed এনার্জি নাট মিক্স 40g — কাজু, কাঠবাদাম, চিনাবাদাম ও সূর্যমুখী বীজের ড্রাই-রোস্টেড পাওয়ার প্যাক। মাত্র ৳40। Cash on Delivery সারা বাংলাদেশে। Energize Your Day, Pure Goodness!",
-      "socialShareImage": "/uploads/energy-nut-mix-hero-bangla.jpeg",
+      "socialShareImage": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg",
       "isPublished": true,
       "isNoIndex": false,
       "publishedAt": "2026-09-11T05:52:13.190Z",
@@ -1878,7 +1878,7 @@
             "heading": "GoodZeed এনার্জি নাট মিক্স — প্রতিদিনের সেরা নাস্তা, আপনার সুস্থতার চাবিকাঠি",
             "subheading": "Energize Your Day! Pure Goodness. Dry-roasted almonds, cashews, peanuts & sunflower seeds — no added oil, no preservatives. অফিস টিফিন, স্কুল স্ন্যাকস, জিম, ভ্রমণ বা ইফতারের জন্য পারফেক্ট 40g এনার্জি প্যাক।",
             "ctaText": "এখনই অর্ডার করুন — Cash on Delivery",
-            "imageUrl": "/uploads/energy-nut-mix-hero-bangla.jpeg"
+            "imageUrl": "https://zdwzouzryirkrnntezer.supabase.co/storage/v1/object/public/goodzeed-media/uploads/energy-nut-mix-hero-bangla.jpeg"
           }
         },
         {

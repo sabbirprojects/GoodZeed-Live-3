@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { ProductMediaItem } from '../../types';
 import { detectProductMediaType, parseVideoUrl, syncLegacyImages } from '../../utils/mediaUtils';
+import { uploadMedia } from '../../services/storageService';
 
 interface ProductMediaManagerProps {
   media: ProductMediaItem[];
@@ -66,30 +67,27 @@ export const ProductMediaManager: React.FC<ProductMediaManagerProps> = ({
         continue;
       }
 
-      // Upload to /api/upload so files land in public/uploads/ and survive restarts.
-      // No base64/blob fallback: data URLs exceed localStorage quota and bloat
-      // store.json, silently breaking settings/homepage persistence.
+      // Direct upload to Supabase Storage bucket 'goodzeed-media'
       let finalUrl = '';
+      let uploadErrorMessage = '';
       try {
-        const formData = new FormData();
-        formData.append('file', file);
-        const resp = await fetch('/api/upload', { method: 'POST', body: formData });
-        if (resp.ok) {
-          const json = await resp.json();
-          if (json && json.url) {
-            finalUrl = json.url;
-          } else {
-            failedCount += 1;
-          }
+        const res = await uploadMedia(file, 'products');
+        if (res.success && res.url) {
+          finalUrl = res.url;
         } else {
           failedCount += 1;
+          uploadErrorMessage = res.error || 'Storage upload rejected';
         }
-      } catch (err) {
-        console.warn('[ProductMediaManager] Upload to /api/upload failed:', err);
+      } catch (err: any) {
+        console.warn('[ProductMediaManager] upload error:', err);
         failedCount += 1;
+        uploadErrorMessage = err?.message || 'Upload error';
       }
 
       if (!finalUrl) {
+        if (uploadErrorMessage) {
+          console.error(`[ProductMediaManager] Failed to upload ${file.name}: ${uploadErrorMessage}`);
+        }
         continue;
       }
 
@@ -105,7 +103,7 @@ export const ProductMediaManager: React.FC<ProductMediaManagerProps> = ({
     setIsUploading(false);
     if (failedCount > 0) {
       alert(
-        `${failedCount} file(s) could not be uploaded. Make sure the backend is running (npm run dev / node server.js) and try a smaller file, or add media via URL instead.`
+        `${failedCount} file(s) could not be uploaded to Supabase Storage. Please try a smaller file, verify your network connection, or add media via URL instead.`
       );
     }
     if (addedItems.length > 0) {
@@ -222,13 +220,13 @@ export const ProductMediaManager: React.FC<ProductMediaManagerProps> = ({
         {isUploading ? (
           <div className="flex flex-col items-center justify-center py-2">
             <span className="w-8 h-8 border-3 border-[#2F5233]/30 border-t-[#2F5233] rounded-full animate-spin mb-2" />
-            <p className="text-sm font-bold text-[#2F5233]">Uploading and saving to public/uploads/...</p>
+            <p className="text-sm font-bold text-[#2F5233]">Uploading to Supabase Storage...</p>
           </div>
         ) : (
           <>
             <Upload className="w-7 h-7 mx-auto text-neutral-400 mb-2" />
             <p className="text-sm font-semibold text-neutral-700">Drop images or video here, or <span className="text-[#2F5233] underline">browse</span></p>
-            <p className="text-xs text-neutral-400 mt-1">PNG, JPG, WebP (max 2MB) · MP4, WebM (max 15MB) · Saved locally to public/uploads/</p>
+            <p className="text-xs text-neutral-400 mt-1">PNG, JPG, WebP (max 2MB) · MP4, WebM (max 15MB) · Stored in Supabase Storage</p>
           </>
         )}
         <input ref={fileInputRef} type="file" multiple accept={ACCEPTED_TYPES} className="hidden" onChange={handleFileInputChange} />

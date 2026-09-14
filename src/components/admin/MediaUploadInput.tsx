@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Upload, X, Image as ImageIcon, Link } from 'lucide-react';
+import { uploadMedia, MediaFolder } from '../../services/storageService';
 
 interface MediaUploadInputProps {
   value: string;
@@ -8,12 +9,11 @@ interface MediaUploadInputProps {
   required?: boolean;
   placeholder?: string;
   className?: string;
+  folder?: MediaFolder;
 }
 
 /**
- * Dual-mode image input: paste a URL OR upload a local file.
- * When a file is uploaded, it is read as a base64 data URL via FileReader
- * and passed to onChange — no server required.
+ * Dual-mode image input: paste a URL OR upload a local file directly to Supabase Storage.
  */
 export const MediaUploadInput: React.FC<MediaUploadInputProps> = ({
   value,
@@ -21,7 +21,8 @@ export const MediaUploadInput: React.FC<MediaUploadInputProps> = ({
   label,
   required = false,
   placeholder = 'Paste image URL or upload a file...',
-  className = ''
+  className = '',
+  folder = 'general'
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -46,24 +47,19 @@ export const MediaUploadInput: React.FC<MediaUploadInputProps> = ({
     setUploadError(null);
     setIsUploading(true);
 
-    // Upload to backend (/api/upload).
+    // Direct upload to Supabase Storage
     try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const resp = await fetch('/api/upload', { method: 'POST', body: formData });
-      if (resp.ok) {
-        const json = await resp.json();
-        if (json && json.url) {
-          onChange(json.url);
-          setIsUploading(false);
-          e.target.value = '';
-          return;
-        }
+      const res = await uploadMedia(file, (folder as MediaFolder) || 'general');
+      if (res.success && res.url) {
+        onChange(res.url);
+        setIsUploading(false);
+        e.target.value = '';
+        return;
       }
-      throw new Error('Upload failed');
-    } catch (err) {
-      console.error('Upload to server failed', err);
-      setUploadError('Failed to upload image. Please try again.');
+      throw new Error(res.error || 'Supabase Storage upload failed');
+    } catch (err: any) {
+      console.error('Upload failed', err);
+      setUploadError(err?.message || 'Failed to upload image. Please try again.');
       setIsUploading(false);
     }
   };
