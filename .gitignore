@@ -74,5 +74,6 @@ Thumbs.db:encryptable
 
 # Local AI / Tool Caches
 .gemini/
+.opencode/
 
 

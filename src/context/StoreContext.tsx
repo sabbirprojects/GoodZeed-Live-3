@@ -430,6 +430,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       // 1. If Supabase is configured, attempt live hydration from Supabase services
       if (isSupabaseConfigured()) {
         try {
+          const timeoutPromise = new Promise<never>((_, reject) =>
+            setTimeout(() => reject(new Error('Supabase hydration timeout (8s)')), 8000)
+          );
+
           const [
             sbSettings,
             sbCategories,
@@ -441,17 +445,20 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             sbLandingPages,
             sbReviews,
             sbTickets
-          ] = await Promise.all([
-            settingsService.fetchStoreSettings(),
-            catalogService.fetchCategories(),
-            catalogService.fetchProducts(),
-            settingsService.fetchDeliveryZones(),
-            orderService.fetchOrders(),
-            orderService.fetchCustomers(),
-            cmsService.fetchHomepageSections(),
-            cmsService.fetchLandingPages(),
-            supportService.fetchReviews(),
-            supportService.fetchSupportTickets()
+          ] = await Promise.race([
+            Promise.all([
+              settingsService.fetchStoreSettings(),
+              catalogService.fetchCategories(),
+              catalogService.fetchProducts(),
+              settingsService.fetchDeliveryZones(),
+              orderService.fetchOrders(),
+              orderService.fetchCustomers(),
+              cmsService.fetchHomepageSections(),
+              cmsService.fetchLandingPages(),
+              supportService.fetchReviews(),
+              supportService.fetchSupportTickets()
+            ]),
+            timeoutPromise
           ]);
 
           if (isMounted) {
@@ -512,7 +519,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       try {
         const resp = await fetch('/api/store');
         if (resp.ok) {
-          data = await resp.json();
+          const contentType = resp.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            data = await resp.json();
+          }
         }
       } catch {
         // Expected when running on static hosts like Netlify or preview without node server
