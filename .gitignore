@@ -1,23 +1,78 @@
+# ==============================================================================
+# GoodZeed Production & Deployment Git Ignore
+# ==============================================================================
+
 # Dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# Build output
-build/
+# Build Outputs & Bundles
 dist/
+dist-ssr/
+build/
+out/
+*.tsbuildinfo
 
-# Test coverage
-coverage/
-
-# Logs
-*.log
-
-# Environment variables
-.env*
+# Environment Variables & Secrets (CRITICAL for Deployment)
+.env
+.env.*
 !.env.example
+*.pem
+*.key
+*.cert
 
-# OS files
-.DS_Store
+# Cloud Hosting & Deployment Tooling
+.vercel
+.netlify
+.turbo
+.wrangler
+.cache/
+.parcel-cache/
 
-# Runtime data (root-anchored so src/data/ stays tracked)
+# Logs & Debugging
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Local Runtime Data
+# (Root-anchored so src/data/ remains tracked in version control)
 /data/
+/temp/
+/tmp/
+
+# IDE & Editor Configurations
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
+Thumbs.db:encryptable
+
+# Local AI / Tool Caches
+.gemini/
+
 
